@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Leftside from "./Leftside";
+import Main from "./Main";
+import Bottom from "./Bottom";
 
 const Home = (props) => {
   return (
@@ -15,6 +17,8 @@ const Home = (props) => {
       </Section>
       <Layout>
         <Leftside />
+        <Main />
+        <Bottom />
       </Layout>
     </Container>
   );
@@ -22,7 +26,8 @@ const Home = (props) => {
 
 const Container = styled.div`
   padding-top: 52px;
-  max-width: 100%;
+  max-width: 80vw;
+  padding-left: 10vw;
 `;
 
 const Content = styled.div`

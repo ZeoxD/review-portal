@@ -1,19 +1,9 @@
 import styled from "styled-components";
 
-const Leftside = (props) => {
+const Bottom = (props) => {
   return (
     <Container>
       <ArtCard>
-        <UserInfo>
-          <CardBackground />
-          <a>
-            <Photo />
-            <Link>Welcome, there!</Link>
-          </a>
-          <a>
-            <AddPhotoText></AddPhotoText>
-          </a>
-        </UserInfo>
         <Widget>
           <a>
             <div>
@@ -196,4 +186,4 @@ const CommunityCard = styled(ArtCard)`
   }
 `;
 
-export default Leftside;
+export default Bottom;

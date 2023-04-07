@@ -36,8 +36,6 @@ const Header = (props) => {
             <User>
               <a>
                 <img src="/images/user.svg" alt="" />
-                <span>Me</span>
-                <img src="/images/down-icon.svg" alt="" />
               </a>
 
               <SignOut>
@@ -200,6 +198,7 @@ const SignOut = styled.div`
   position: absolute;
   top: 45px;
   background: white;
+  border: 1px solid #f5f5f5;
   border-radius: 0 0 5px 5px;
   width: 100px;
   height: 40px;
@@ -211,12 +210,12 @@ const SignOut = styled.div`
 
 const User = styled(NavList)`
   a > svg {
-    width: 24px;
+    width: 40px;
     border-radius: 50%;
   }
   a > img {
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
   }
   span {
