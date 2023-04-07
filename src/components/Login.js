@@ -16,7 +16,7 @@ const Login = (props) => {
             <Section>
                 <Hero>
                     <h1>Welcome to our Personal Review Portal application.</h1>
-                    <img src="/images/preview-login.jpg" alt="" />
+                    <img src="/images/preview-login-small.jpg" alt="" />
                 </Hero>
                 <Form>
                     <Google>
@@ -184,6 +184,6 @@ const mapDispatchToProps = (dispatch) => ({
 
 });
 
-//export default Login;
+export default Login;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+//export default connect(mapStateToProps, mapDispatchToProps)(Login);
