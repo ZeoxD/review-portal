@@ -19,14 +19,14 @@ const Header = (props) => {
         </Search>
         <Nav>
           <NavListWrap>
-            <NavList className="active">
+            <NavList className={`${props.home}`} onClick={event => window.location.href='/home'}>
               <a>
                 <img src="/images/nav-home.svg" alt="" />
                 <span>Home</span>
               </a>
             </NavList>
 
-            <NavList>
+            <NavList className={`${props.explore}`} onClick={event => window.location.href='/explore'}>
               <a>
                 <img src="/images/nav-network.svg" alt="" />
                 <span>Explore</span>

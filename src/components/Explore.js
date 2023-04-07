@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import Leftside from "./Leftside";
-import Main from "./Main";
-import Bottom from "./Bottom";
+import UserGrid from "./UserGrid";
 
-const Home = (props) => {
+const Explore = (props) => {
   return (
     <Container>
       <Section>
@@ -15,9 +13,7 @@ const Home = (props) => {
         </p>
       </Section>
       <Layout>
-        <Leftside />
-        <Main />
-        <Bottom />
+        <UserGrid />
       </Layout>
     </Container>
   );
@@ -77,4 +73,4 @@ const Layout = styled.div`
   }
 `;
 
-export default Home;
+export default Explore;
