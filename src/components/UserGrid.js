@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const UserGrid = (props) => {
+  const name = props.name;
   return (
     <Container>
       <ArtCard>
@@ -8,7 +9,7 @@ const UserGrid = (props) => {
           <CardBackground />
           <a>
             <Photo />
-            <Link>Welcome, there!</Link>
+            <Link>{name}</Link>
           </a>
           <a>
             <AddPhotoText></AddPhotoText>
@@ -54,6 +55,7 @@ const UserGrid = (props) => {
 
 const Container = styled.div`
   grid-area: leftside;
+  width: 250px;
 `;
 
 const ArtCard = styled.div`
@@ -85,14 +87,14 @@ const CardBackground = styled.div`
 
 const Photo = styled.div`
   box-shadow: none;
-  background-image: url("/images/photo.svg");
+  background-image: url("/images/user.svg");
   width: 72px;
   height: 72px;
   box-sizing: border-box;
   background-clip: content-box;
   background-color: white;
   background-position: center;
-  background-size: 60%;
+  background-size: 100%;
   background-repeat: no-repeat;
   border: 2px solid white;
   margin: -38px auto 12px;

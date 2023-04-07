@@ -8,10 +8,10 @@ const Home = (props) => {
     <Container>
       <Section>
         <h5>
-          <a>Want to explore various profiles? - </a>
+          <a>Want to increase your Review score? - </a>
         </h5>
         <p>
-          Find various users using our Search mechanism in the explore tab.
+          Add various achievements to your profile to increase your Review score.
         </p>
       </Section>
       <Layout>
@@ -24,9 +24,8 @@ const Home = (props) => {
 };
 
 const Container = styled.div`
-  padding-top: 52px;
-  max-width: 80vw;
-  padding-left: 10vw;
+  padding-top: 72px;
+  max-width: 100vw;
 `;
 
 const Content = styled.div`
@@ -36,7 +35,7 @@ const Content = styled.div`
 `;
 
 const Section = styled.section`
-  min-height: 50px;
+  min-height: 26px;
   padding: 16px 0;
   box-sizing: content-box;
   text-align: center;
@@ -63,7 +62,10 @@ const Section = styled.section`
 
 const Layout = styled.div`
     display: flex;
+    justify-content: center;
     flex-direction: column;
+    width: 72vw;
+    padding-left: 14vw;
     grid-template-areas: "leftside main rightside";
     grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
     column-gap: 25px;
@@ -72,7 +74,6 @@ const Layout = styled.div`
     margin: 25px 0;
     @media (max-width: 768px) {
         display: flex;
-        flex-direction: column;
         padding: 0 5px;
   }
 `;

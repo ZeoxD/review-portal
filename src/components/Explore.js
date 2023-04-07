@@ -13,16 +13,24 @@ const Explore = (props) => {
         </p>
       </Section>
       <Layout>
-        <UserGrid />
+        <UserGrid name= "Andrew"/>
+        <UserGrid name= "John" />
+        <UserGrid name= "James" />
+        <UserGrid name= "Johnson" />
+        <UserGrid name= "Jeffrey" />
+        <UserGrid name= "Josesph" />
+        <UserGrid name= "Evan" />
+        <UserGrid name= "Keith" />
+        <UserGrid name= "Harrison" />
+        <UserGrid name= "Adam" />
       </Layout>
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding-top: 52px;
-  max-width: 80vw;
-  padding-left: 10vw;
+  padding-top: 72px;
+  max-width: 100vw;
 `;
 
 const Content = styled.div`
@@ -32,7 +40,7 @@ const Content = styled.div`
 `;
 
 const Section = styled.section`
-  min-height: 50px;
+  min-height: 26px;
   padding: 16px 0;
   box-sizing: content-box;
   text-align: center;
@@ -59,11 +67,13 @@ const Section = styled.section`
 
 const Layout = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     grid-template-areas: "leftside main rightside";
     grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
-    column-gap: 25px;
-    row-gap: 25px;
+    column-gap: 40px;
+    row-gap: 40px;
     /* grid-template-row: auto; */
     margin: 25px 0;
     @media (max-width: 768px) {
