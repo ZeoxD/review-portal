@@ -38,7 +38,7 @@ const Header = (props) => {
                 <img src="/images/user.svg" alt="" />
               </a>
 
-              <SignOut>
+              <SignOut onClick={event => window.location.href='/'}>
                 <a>Sign Out</a>
               </SignOut>
             </User>
