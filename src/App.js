@@ -1,20 +1,20 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
-import Login from "./components/Login";
-import Header from "./components/Header";
-import Home from "./components/Home";
-import Explore from "./components/Explore";
+import Login from "./pages/login/Login";
+import Header from "./pages/navbar/Header";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Explore from "./pages/explore/Explore";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route exact path="/" element = {<Login/>} />
-          <Route exact path="/home" element = {<> <Header home="active" explore=""/> <Home/> </>} />
-          <Route exact path="/explore" element = {<> <Header home="" explore="active"/> <Explore/> </>} />
+          <Route path="/home" element = {<> <Header home="active" explore=""/> <Dashboard/> </>} />
+          <Route path="/explore" element = {<> <Header home="" explore="active"/> <Explore/> </>} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
