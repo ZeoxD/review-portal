@@ -1,23 +1,18 @@
 import styled from "styled-components";
-import Leftside from "./Leftside";
-import Main from "./Main";
-import Bottom from "./Bottom";
 
-const Dashboard = (props) => {
+const Explore = (props) => {
   return (
     <Container>
       <Section>
         <h5>
-          <a>Want to increase your Review score? - </a>
+          <a>Want to explore various profiles? - </a>
         </h5>
         <p>
-          Add various achievements to your profile to increase your Review score.
+          Find various users using our Search mechanism in the explore tab.
         </p>
       </Section>
       <Layout>
-        <Leftside />
-        <Main />
-        <Bottom />
+
       </Layout>
     </Container>
   );
@@ -62,20 +57,20 @@ const Section = styled.section`
 
 const Layout = styled.div`
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
-    width: 72vw;
-    padding-left: 14vw;
     grid-template-areas: "leftside main rightside";
     grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
-    column-gap: 25px;
-    row-gap: 25px;
+    column-gap: 40px;
+    row-gap: 40px;
     /* grid-template-row: auto; */
     margin: 25px 0;
     @media (max-width: 768px) {
         display: flex;
+        flex-direction: column;
         padding: 0 5px;
   }
 `;
 
-export default Dashboard;
+export default Explore;
