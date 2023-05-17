@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import "./Navbar.css";
-import Preview from '/images/preview-logo-large.jpg'
+import Preview from '../../assets/preview-logo-large.jpg'
 
 function Navbar() {
   return (
