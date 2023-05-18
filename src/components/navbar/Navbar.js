@@ -8,11 +8,10 @@ function Navbar() {
     <div className="navbar">
       <ul>
         <li className="logo">
-          <img src={Preview} alt="dojo logo" />
-          <span> Le Dojo</span>
+          <img src={Preview} alt="Preview logo"/>
         </li>
         
-        <li>
+        <li className="nav-btn">
             <Link to="/login">Login</Link>
         </li>
         <li>

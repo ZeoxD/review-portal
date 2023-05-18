@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Login = (props) => {
     return (
         <Container>
-            <Nav>
+            {/*<Nav>
                 <a href="/">
                     <img src="/images/preview-logo-large.jpg" alt="" height="38px" width="145px"/>
                 </a>
@@ -11,7 +11,7 @@ const Login = (props) => {
                     <Join>Sign Up</Join>
                     <SignIn onClick={event => window.location.href='/home'}>Sign In</SignIn>
                 </div>
-            </Nav>
+            </Nav>*/}
             <Section>
                 <Hero>
                     <h1>Welcome to our Personal Review Portal application.</h1>
@@ -29,7 +29,7 @@ const Login = (props) => {
 }
 
 const Container = styled.div`
-padding: 0px;
+    padding: 0px;
 `;
 
 
@@ -74,7 +74,7 @@ const Join = styled.a`
 const SignIn = styled.a`
     box-shadow: inset 0 0 0 1px #0f2310;
     color: #1e4620;
-    border-radius: 24px;
+    border-radius: 6px;
     border: 2px solid;
     transition-duration: 180ms;
     font-size: 16px;
