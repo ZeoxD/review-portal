@@ -32,7 +32,6 @@ const Container = styled.div`
     padding: 0px;
 `;
 
-
 const Nav = styled.nav`
     max-width: 98vw;
     margin: auto;
