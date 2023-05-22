@@ -8,9 +8,38 @@ function Signup() {
     const [password, setPassword] = useState('')
     const [displayName, setDisplayName] = useState('') 
     const [thumbnail, setThumbnail] = useState(null)
+    const [thumbailError, setThumbnailError] = useState(null)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(email, password, displayName, thumbnail)
+    }
+
+    const handleFileChange = (e) => {
+        setThumbnail(null)
+        let selected = e.target.files[0]
+        console.log(selected)
+
+        if(!selected) {
+            setThumbnailError('Please select a file')
+            return
+        }
+        if(!selected.type.includes('image')) {
+            setThumbnailError('Selected file must be an image') 
+            return
+        }
+        if(selected.size > 100000) {
+            setThumbnailError('Image must be smaller than 100kb')
+            return
+        }
+        setThumbnailError(null)
+        setThumbnail(selected)
+        console.log('thumbnail updated')
+
+    }
 
     return (
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={handleSubmit}>
             <h1>Sign up</h1>
             <label>
                 <span>Email: </span>
@@ -26,7 +55,11 @@ function Signup() {
             </label>
             <label>
                 <span>Profile Thumbail: </span>
-                <input required type="file" />
+                <input
+                    required type="file" 
+                    onChange={handleFileChange}
+                />
+                {thumbailError && <div className="error">{thumbailError}</div>}
             </label>
             <button className="btn">Sign up</button>
         </form>

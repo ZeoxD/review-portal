@@ -6,6 +6,7 @@ import Home from "./pages/home/Home"
 import Navbar from "./components/navbar/Navbar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Explore from "./pages/explore/Explore";
+import Preview from "./pages/preview/Preview";
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
           <Routes>
             <Route path="/login" element = {<Login/>} />
             <Route path="/signup" element = {<Signup/>} />
-            <Route exact path="/" element = {<Home/>} />
+            <Route path="/home" element = {<Home/>} />
             <Route path="/explore" element = {<Explore/>} />
-            <Route path="/dashboard" element = {<Dashboard/>} />
+            <Route path="/preview" element = {<Preview/>} />
+            <Route exact path="/" element = {<Dashboard/>} />
           </Routes>
         </div>
       </BrowserRouter>
