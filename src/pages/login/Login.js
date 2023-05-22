@@ -1,177 +1,57 @@
-import styled from "styled-components";
+import { useState } from 'react'
 
-const Login = (props) => {
+//styles
+import './Login.css'
+
+function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [displayName, setDisplayName] = useState('') 
+    const [thumbnail, setThumbnail] = useState(null)
+    const [thumbailError, setThumbnailError] = useState(null)
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(email, password, displayName, thumbnail)
+    }
+
+    const handleFileChange = (e) => {
+        setThumbnail(null)
+        let selected = e.target.files[0]
+        console.log(selected)
+
+        if(!selected) {
+            setThumbnailError('Please select a file')
+            return
+        }
+        if(!selected.type.includes('image')) {
+            setThumbnailError('Selected file must be an image') 
+            return
+        }
+        if(selected.size > 100000) {
+            setThumbnailError('Image must be smaller than 100kb')
+            return
+        }
+        setThumbnailError(null)
+        setThumbnail(selected)
+        console.log('thumbnail updated')
+
+    }
+
     return (
-        <Container>
-            {/*<Nav>
-                <a href="/">
-                    <img src="/images/preview-logo-large.jpg" alt="" height="38px" width="145px"/>
-                </a>
-                <div>
-                    <Join>Sign Up</Join>
-                    <SignIn onClick={event => window.location.href='/home'}>Sign In</SignIn>
-                </div>
-            </Nav>*/}
-            <Section>
-                <Hero>
-                    <h1>Welcome to our Personal Review Portal application.</h1>
-                    <img src="/images/preview-login-small.jpg" alt="" />
-                </Hero>
-                <Form>
-                    <Google onClick={event => window.location.href='/home'}>
-                        <img src="/images/google-logo.png" alt="" height="26px" width="auto"></img>
-                        Sign in with Google
-                    </Google>
-                </Form>
-            </Section>
-        </Container>
+        <form className="auth-form" onSubmit={handleSubmit}>
+            <h1>Sign up</h1>
+            <label>
+                <span>Email: </span>
+                <input required type="email" onChange={(e) => setEmail(e.target.value)} value={email} />
+            </label>
+            <label>
+                <span>Password: </span>
+                <input required type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+            </label>
+            <button className="btn">Sign up</button>
+        </form>
     )
 }
-
-const Container = styled.div`
-    padding: 0px;
-`;
-
-const Nav = styled.nav`
-    max-width: 98vw;
-    margin: auto;
-    padding: 12px 0 16px;
-    display: flex;
-    align-items:center;
-    position: relative;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-
-    & > a {
-        width: 145px;
-        height: 38px;
-        box-shadow: 1px 1px 3px black;
-        border-radius: 2px;
-        @media (max-width: 768px) {
-            padding: 0 5px;
-        }z-index: -1;
-    }
-`;
-
-const Join = styled.a`
-    font-size: 16px;
-    padding: 12px 14px;
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.6);
-    margin-right: 12px;
-    border-radius: 5px;
-    font-weight: bold;
-
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.08);
-        color: rgba(0, 0, 0, 0.9);
-        text-decoration: none;
-
-    }
-`;
-
-const SignIn = styled.a`
-    box-shadow: inset 0 0 0 1px #0f2310;
-    color: #1e4620;
-    border-radius: 6px;
-    border: 2px solid;
-    transition-duration: 180ms;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 40px;
-    padding: 10px 20px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0);
-    &:hover {
-        background-color: rgba(172, 233, 135, 0.12);
-        text-decoration: none;
-    }
-`;
-
-const Section = styled.section`
-    display: flex;    
-    align-content: start;
-    min-height: 700px;
-    padding-bottom: 140px;
-    paddint-top: 40px;
-    padding: 0 60px;
-    position: relative;
-    flex-wrap: wrap;
-    width: 90%;
-    max-width: 100vw;
-    margin: auto;
-    @media(max-width: 768px) {
-        margin: auto;
-        min-height: 0;
-        width: 80%;
-    }
-    
-`;
-
-const Hero = styled.div`
-    width: 100%;
-    h1 {
-        padding-bottom: 0;
-        width: 55%;
-        font-size: 50px;
-        color: #1e4620;
-        font-weight: 400;
-        line-height: 70px;
-        @media (max-width: 768px) {
-            margin-top: 80px;
-            margin-bottom: 60px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            width: 100%;
-            line-height: 2;
-        }
-    }
-
-    img {
-        z-index: -1;
-        width: 50vw;
-        height: auto;
-        position: absolute;
-        bottom: 6vh;
-        right: 6vw;
-        @media (max-width: 768px) {
-            top: 230px;
-            width: 80vw;
-            position: initial;
-            height: auto;
-
-        }
-    }
-`;
-
-const Form = styled.div`
-    margin-top:100px;
-    width: 408px;
-    @media (max-width: 768px) {
-        margin-top: 20px;
-    }
-`;
-
-const Google = styled.button`
-    display: flex;
-    justify-content: center;
-    background-color: #fff;
-    align-items: center;
-    height: 56px;
-    width: 100%;
-    border-radius: 28px;
-    box-shadow: inset 0 0 0 1px rgba(0 0 0 / 60%), 
-                inset 0 0 0 2px rgba(0 0 0 / 0%) inset 0 0 0 1px rgba(0 0 0 / 0%);
-    vertical-align: middle;
-    z-index: 0;
-    transition-duration: 167ms;
-    font-size: 20px;
-    color: rgba(0, 0, 0, 0.6);
-    &:hover {
-        background-color: rgba(207, 207, 207, 0.25);
-        color: rgba(0, 0, 0, 0.75);
-    }
-`;
 
 export default Login;
