@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { useLogout } from '../../hooks/useLogout'
+import { useLogout } from '../hooks/useLogout'
 
 // styles & images
 import "./Navbar.css";
-import Preview from '../../assets/preview-logo-large.jpg'
+import Preview from '../assets/preview-logo-large.jpg'
 
 function Navbar() {
 
