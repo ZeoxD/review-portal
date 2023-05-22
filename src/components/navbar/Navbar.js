@@ -10,7 +10,12 @@ function Navbar() {
         <li className="logo">
           <img src={Preview} alt="Preview logo"/>
         </li>
-        
+        <li>
+            <Link to="/Home" className="li-link">Home</Link>
+        </li>
+        <li>
+            <Link to="/explore" className="li-link">Explore</Link>
+        </li>        
         <li>
             <Link to="/login" className="li-link">Login</Link>
         </li>
