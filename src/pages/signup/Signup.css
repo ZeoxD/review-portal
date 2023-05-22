@@ -1,0 +1,14 @@
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    margin: 60px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 4px black;
+    background: #fff;
+}
+
+.auth-form h1 {
+    font-size: 1.8rem;
+}
