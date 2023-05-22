@@ -11,11 +11,11 @@ function Navbar() {
           <img src={Preview} alt="Preview logo"/>
         </li>
         
-        <li className="nav-btn">
-            <Link to="/login">Login</Link>
+        <li>
+            <Link to="/login" className="li-link">Login</Link>
         </li>
         <li>
-            <Link to="/signup">Signup</Link>
+            <Link to="/signup" className="li-link">Signup</Link>
         </li>
         <li>
             <button className="btn">

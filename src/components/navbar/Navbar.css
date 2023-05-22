@@ -1,9 +1,9 @@
 .navbar {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 10px;
     box-sizing: border-box;
     margin-bottom: 20px;
-
+    background-color: #fbfbfb;
   }
   .navbar ul {
     display: flex;
@@ -14,14 +14,32 @@
   }
   .navbar .logo {
     margin-right: auto;
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px black;
   }
   .navbar .logo img {
-    width: 150px;
+    width: 145px;
+    display: block;
+    border-radius: 4px;
   }
   .navbar a {
     color: #333;
     text-decoration: none;
     margin-right: 20px;
+  }
+  .navbar .li-link {
+    border: 2px solid black;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 6px 12px;
+  }
+  .navbar .li-link:hover {
+    border: 2px solid black;
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 6px 12px;
+    box-shadow: 1px 1px 2px black;
   }
   .navbar .btn {
     font-weight: bolder;
