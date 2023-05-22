@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { projectAuth, projectStorage } from '../firebase/config'
+import { projectAuth, projectStorage, projectFirestore } from '../firebase/config'
 import { useAuthContext } from './useAuthContext'
 
 export const useSignup = () => {
@@ -14,19 +14,28 @@ export const useSignup = () => {
   
     try {
       // signup
+      console.log('logging user in...')
       const res = await projectAuth.createUserWithEmailAndPassword(email, password)
+      console.log(res.user)
 
       if (!res) {
         throw new Error('Could not complete signup')
       }
 
       // upload user profile photo
-      const uploadPath = `thumbnails/${res.user.id}/${thumbnail.name}` 
-      await projectStorage.ref(uploadPath).put(thumbnail)
+      const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}` 
+      const img = await projectStorage.ref(uploadPath).put(thumbnail)
       const imgUrl = await img.ref.getDownloadURL()
 
       // add display name to user
       await res.user.updateProfile({ displayName, photoURL:imgUrl })
+
+      // create a user document
+      await projectFirestore.collection('users').doc(res.user.uid).set({
+        online: true,
+        displayName,
+        photoURL: imgUrl
+      })
 
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user })

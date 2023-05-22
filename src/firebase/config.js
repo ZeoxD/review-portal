@@ -13,10 +13,10 @@ const firebaseConfig = {
 };
 
 // init firebase
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // init firebase services
-const projectFirestore = firebaseApp.firestore();
+const projectFirestore = firebase.firestore();
 const projectAuth = firebase.auth();
 const projectStorage = firebase.storage();
 
