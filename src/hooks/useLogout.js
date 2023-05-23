@@ -18,7 +18,6 @@ export const useLogout = () => {
       const { uid } = user
       await projectFirestore.collection('users').doc(uid).update({ online: false })
 
-      console.log('logging out.........')
       // sign the user out
       await projectAuth.signOut()
       

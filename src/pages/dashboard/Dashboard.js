@@ -1,47 +1,53 @@
+import Avatar from '../../components/Avatar'
+import { useAuthContext } from '../../hooks/useAuthContext'
+
+// styles & images
 import styled from "styled-components";
-import Leftside from "./Leftside";
-import Main from "./Main";
-import Bottom from "./Bottom";
 
 const Dashboard = (props) => {
+
+  const { user } = useAuthContext()
+
   return (
     <Container>
       <Section>
-        <h5>
-          <a>Want to increase your Review score? - </a>
-        </h5>
-        <p>
-          Add various achievements to your profile to increase your Review score.
-        </p>
+        <Avatar src = {user.photoURL}/>
+        <p>Hey {user.displayName}</p>
       </Section>
-      <Layout>
-        <Leftside />
-        <Main />
-        <Bottom />
-      </Layout>
+ 
+      <Content>
+        <h1>Achievements</h1>
+      </Content>
+      <Content>
+        <h1>Here we'll have the page content.</h1>
+      </Content>
+      <Content>
+        <h1>Here we'll have the page content.</h1>
+      </Content>
+      <Content>
+        <h1>Here we'll have the page content.</h1>
+      </Content>
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding-top: 72px;
+  padding-top: 48px;
   max-width: 100vw;
-`;
-
-const Content = styled.div`
-  max-width: 1128px;
-  margin-left: auto;
-  margin-right: auto;
-`;
+  margin-bottom: 20px;
+`
 
 const Section = styled.section`
   min-height: 26px;
   padding: 16px 0;
+  margin: 12px;
   box-sizing: content-box;
   text-align: center;
   text-decoration: underline;
   display: flex;
   justify-content: center;
+  border: 2px solid black;
+  border-radius: 5px;
   h5 {
     color: #0a66c2;
     font-size: 14px;
@@ -58,24 +64,13 @@ const Section = styled.section`
     flex-direction: column;
     padding: 0 5px;
   }
-`;
+`
 
-const Layout = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 72vw;
-    padding-left: 14vw;
-    grid-template-areas: "leftside main rightside";
-    grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
-    column-gap: 25px;
-    row-gap: 25px;
-    /* grid-template-row: auto; */
-    margin: 25px 0;
-    @media (max-width: 768px) {
-        display: flex;
-        padding: 0 5px;
-  }
-`;
+const Content = styled.div`
+  max-width: 1128px;
+  margin: 10px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+`
 
 export default Dashboard;
