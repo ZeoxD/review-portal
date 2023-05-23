@@ -29,7 +29,7 @@ function Navbar() {
         </li>
         <li>
             {!isPending && <button className="btn" onClick={logout}>Logout</button>}
-            {isPending && <button className="btn" disabled>Logging out...</button>}
+            {isPending && <button className="btn" disabled>Logout</button>}
         </li>
       </ul>
     </div>
