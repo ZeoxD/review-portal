@@ -1,35 +1,31 @@
+import { useCollection } from '../../hooks/useCollection'
+
+// styles & images
 import styled from "styled-components";
+
+// pages & componenets
 import UserGrid from "./UserGrid";
 
-const Explore = (props) => {
+function Explore() {
+
+  const  { error, documents } = useCollection('users')
+
   return (
     <Container>
       <Section>
-        <h5>
-          <a>Want to explore various profiles? - </a>
-        </h5>
-        <p>
-          Find various users using our Search mechanism in the explore tab.
-        </p>
+        <h1>Explore registered user profiles here</h1>
       </Section>
       <Layout>
-        <UserGrid name= "Andrew"/>
-        <UserGrid name= "John" />
-        <UserGrid name= "James" />
-        <UserGrid name= "Johnson" />
-        <UserGrid name= "Jeffrey" />
-        <UserGrid name= "Josesph" />
-        <UserGrid name= "Evan" />
-        <UserGrid name= "Keith" />
-        <UserGrid name= "Harrison" />
-        <UserGrid name= "Adam" />
+        {documents && documents.map(user => (
+          <UserGrid key={user.id} name={user.displayName} imgSrc={user.photoURL} onlineStatus={ user.online ? "green" : "red"} jobStatus="Employed"/>
+        ))}
       </Layout>
     </Container>
   );
 };
 
 const Container = styled.div`
-  padding-top: 72px;
+  padding-top: 36px;
   max-width: 100vw;
 `;
 
@@ -44,7 +40,6 @@ const Section = styled.section`
   padding: 16px 0;
   box-sizing: content-box;
   text-align: center;
-  text-decoration: underline;
   display: flex;
   justify-content: center;
   h5 {

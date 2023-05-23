@@ -1,15 +1,19 @@
+// styles & images
 import styled from "styled-components";
+import './UserGrid.css'
+
+// pages & components
+import Avatar from '../../components/Avatar'
 
 const UserGrid = (props) => {
-  const name = props.name;
+
   return (
     <Container>
       <ArtCard>
-        <UserInfo>
-          <CardBackground />
+        <UserInfo className={props.onlineStatus}>
           <a>
-            <Photo />
-            <Link>{name}</Link>
+            <Avatar src={props.imgSrc}/>
+            <Link>{props.name}</Link>
           </a>
           <a>
             <AddPhotoText></AddPhotoText>
@@ -18,8 +22,8 @@ const UserGrid = (props) => {
         <Widget>
           <a>
             <div>
-              <span>Connections</span>
-              <span>Grow your network</span>
+              <span>Status</span>
+              <span>{props.jobStatus}</span>
             </div>
             <img src="/images/widget-icon.svg" alt="" />
           </a>
@@ -27,28 +31,10 @@ const UserGrid = (props) => {
         <Item>
           <span>
             <img src="/images/item-icon.svg" alt="" />
-            My Items
+            <h4>500</h4>
           </span>
         </Item>
       </ArtCard>
-
-      <CommunityCard>
-        <a>
-          <span>Groups</span>
-        </a>
-        <a>
-          <span>
-            Events
-            <img src="/images/plus-icon.svg" alt="" />
-          </span>
-        </a>
-        <a>
-          <span>Follow Hashtags</span>
-        </a>
-        <a>
-          <span>Discover more</span>
-        </a>
-      </CommunityCard>
     </Container>
   );
 };
@@ -77,29 +63,6 @@ const UserInfo = styled.div`
   word-break: break-word;
 `;
 
-const CardBackground = styled.div`
-  background: url("/images/card-bg.svg");
-  background-position: center;
-  background-size: 462px;
-  height: 54px;
-  margin: -12px -12px 0;
-`;
-
-const Photo = styled.div`
-  box-shadow: none;
-  background-image: url("/images/user.svg");
-  width: 72px;
-  height: 72px;
-  box-sizing: border-box;
-  background-clip: content-box;
-  background-color: white;
-  background-position: center;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  border: 2px solid white;
-  margin: -38px auto 12px;
-  border-radius: 50%;
-`;
 
 const Link = styled.div`
   font-size: 16px;
@@ -154,11 +117,12 @@ const Item = styled.a`
   border-color: rgba(0, 0, 0, 0.8);
   text-align: left;
   padding: 12px;
-  font-size: 12px;
+  font-size: 1.1rem;
   display: block;
   span {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: rgba(0, 0, 0, 1);
     svg {
       color: rgba(0, 0, 0, 0.6);

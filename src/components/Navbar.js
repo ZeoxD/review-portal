@@ -20,7 +20,7 @@ function Navbar() {
 
         {user && ( 
           <>
-            <li><Link to="/Home" className="li-link">Home</Link></li>
+            <li><Link to="/" className="li-link">Home</Link></li>
             <li><Link to="/explore" className="li-link">Explore</Link></li>    
           </>
         )}  
