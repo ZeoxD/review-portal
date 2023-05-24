@@ -7,23 +7,25 @@ import Avatar from '../../components/Avatar'
 
 const UserGrid = (props) => {
 
+  const { name, imgSrc, onlineStatus, jobStatus } = props
+
   return (
     <Container>
       <ArtCard>
         <UserInfo>
           <a>
-            <Avatar src={props.imgSrc}/>
+            <Avatar src={imgSrc}/>
           </a>
         </UserInfo>
-        <UserName className={props.onlineStatus}>
-          <Link>{props.name}</Link>
+        <UserName className={onlineStatus}>
+          <Link>{name}</Link>
           <span></span>
         </UserName>
         <Widget>
           <a>
             <div>
               <span>Status</span>
-              <span>{props.jobStatus}</span>
+              <span>{jobStatus}</span>
             </div>
             <img src="/images/feed-icon.svg" alt="" />
           </a>
