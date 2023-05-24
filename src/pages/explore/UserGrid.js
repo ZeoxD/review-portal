@@ -30,7 +30,7 @@ const UserGrid = (props) => {
         </Widget>
         <Item>
           <span>
-            <img src="/images/item-icon.svg" alt="" />
+            <img src="/images/item-icon.svg" alt=""/>
             <h4>500</h4>
           </span>
         </Item>
@@ -129,11 +129,8 @@ const Item = styled.div`
     align-items: center;
     justify-content: space-between;
     color: rgb(230, 208, 13);
-    svg {
-      color: rgb(230, 208, 13);
-    }
     img {
-      
+      height: 20px;
     }
   }
   &:hover {
