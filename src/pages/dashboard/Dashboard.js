@@ -1,18 +1,33 @@
 import { useAuthContext } from '../../hooks/useAuthContext'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useCollection } from '../../hooks/useCollection'
 
 // styles & images
 import styled from "styled-components";
 import './Dashboard.css'
 
 //pages & components
-import Create from './Create'
 import Avatar from '../../components/Avatar'
 
 const Dashboard = (props) => {
 
+  const { documents, error } = useCollection('achievements')
+  const navigate = useNavigate()
   const { user } = useAuthContext()
   const [add, setAdd] = useState(false)
+
+
+  useEffect(() => {
+    if (add) {
+      navigate("/achievements")
+    }
+  }, [add])
+
+  const handleAdd = (e) => {
+    e.preventDefault() 
+    setAdd(true)
+  }
 
   return (
     <Container>
@@ -25,30 +40,19 @@ const Dashboard = (props) => {
           <div className="user-details">
             <div className="row-value">
               <p>{user.displayName}</p> <p>{user.displayName}</p> <p>{user.displayName}</p>
-              <p>{user.displayName}</p> <p>{user.displayName}</p> <p>{user.displayName}</p>
-            </div>
-            <div className="row-value">
-              <p>{user.displayName}</p> <p>{user.displayName}</p> <p>{user.displayName}</p>
-              <p>{user.displayName}</p> <p>{user.displayName}</p> <p>{user.displayName}</p>
-            </div>
-            <div className="row-value">
-              <p>{user.displayName}</p> <p>{user.displayName}</p> <p>{user.displayName}</p>
-              <p>{user.displayName}</p> <p>{user.displayName}</p> <p>{user.displayName}</p>
-            </div>
-            <div className="row-value">
-              <p>{user.displayName}</p> <p>{user.displayName}</p> <p>{user.displayName}</p>
-              <p>{user.displayName}</p> <p>{user.displayName}</p> <p>{user.displayName}</p>
             </div>
           </div>
         </div>
       </ContentProfile>
       <Content>
         <h1>Achievements</h1>
-        { !add && <button className="btn" onClick={(e) => setAdd(true)}>Add</button> }
-        { add && <button className="btn" onClick={(e) => setAdd(false)}>Close</button> }
+        <button className="btn" onClick={handleAdd}>Add achievements</button>
       </Content>
       <ContentArea>
-        { add && <Create />}
+        {error && <p className="error">{error}</p>}
+        {documents && documents.map(doc => {
+          <p key={doc.id}>{doc.title}</p>
+        })}
       </ContentArea>
 
     </Container>
@@ -64,7 +68,7 @@ const Container = styled.div`
 const ContentProfile = styled.div`
   max-width: 1128px;
   margin: 10px auto;
-  border: 2px solid black;
+  border: 8px solid #ebebf3;
   border-radius: 20px;
 `
 

@@ -1,5 +1,6 @@
 import { useReducer, useEffect, useState } from "react"
 import { projectFirestore, timestamp } from "../firebase/config"
+import { useAuthContext } from './useAuthContext'
 
 let initialState = {
   document: null,
@@ -26,10 +27,11 @@ const firestoreReducer = (state, action) => {
 export const useFirestore = (collection) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState)
   const [isCancelled, setIsCancelled] = useState(false)
+  const { user } = useAuthContext()
 
   // collection ref
-  const ref = projectFirestore.collection(collection)
-
+  const ref = projectFirestore.collection('usersData').doc(user.uid).collection(collection)
+  
   // only dispatch is not cancelled
   const dispatchIfNotCancelled = (action) => {
     if (!isCancelled) {
