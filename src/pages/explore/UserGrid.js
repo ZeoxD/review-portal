@@ -10,22 +10,22 @@ const UserGrid = (props) => {
   return (
     <Container>
       <ArtCard>
-        <UserInfo className={props.onlineStatus}>
+        <UserInfo>
           <a>
             <Avatar src={props.imgSrc}/>
-            <Link>{props.name}</Link>
-          </a>
-          <a>
-            <AddPhotoText></AddPhotoText>
           </a>
         </UserInfo>
+        <UserName className={props.onlineStatus}>
+          <Link>{props.name}</Link>
+          <span></span>
+        </UserName>
         <Widget>
           <a>
             <div>
               <span>Status</span>
               <span>{props.jobStatus}</span>
             </div>
-            <img src="/images/widget-icon.svg" alt="" />
+            <img src="/images/feed-icon.svg" alt="" />
           </a>
         </Widget>
         <Item>
@@ -57,26 +57,31 @@ const ArtCard = styled.div`
 `;
 
 const UserInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 12px 12px 16px;
-  word-wrap: break-word;
-  word-break: break-word;
+  padding: 36px 0;
 `;
 
+const UserName = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 12px 0;
+  word-wrap: break-word;
+  word-break: break-word;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+`;
 
 const Link = styled.div`
   font-size: 16px;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.9);
   font-weight: 600;
-`;
-
-const AddPhotoText = styled.div`
-  color: #0a66c2;
-  margin-top: 4px;
-  font-size: 12px;
-  line-height: 1.33;
-  font-weight: 400;
 `;
 
 const Widget = styled.div`
@@ -113,7 +118,7 @@ const Widget = styled.div`
   }
 `;
 
-const Item = styled.a`
+const Item = styled.div`
   border-color: rgba(0, 0, 0, 0.8);
   text-align: left;
   padding: 12px;
@@ -123,9 +128,12 @@ const Item = styled.a`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: rgba(0, 0, 0, 1);
+    color: rgb(230, 208, 13);
     svg {
-      color: rgba(0, 0, 0, 0.6);
+      color: rgb(230, 208, 13);
+    }
+    img {
+      
     }
   }
   &:hover {
@@ -133,33 +141,5 @@ const Item = styled.a`
   }
 `;
 
-const CommunityCard = styled(ArtCard)`
-  padding: 8px 0 0;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  a {
-    color: black;
-    padding: 4px 12px 4px 12px;
-    font-size: 12px;
-    &:hover {
-      color: #0a66c2;
-    }
-    span {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    &:last-child {
-      color: rgba(0, 0, 0, 0.6);
-      text-decoration: none;
-      border-top: 1px solid #d6cec2;
-      padding: 12px;
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.08);
-      }
-    }
-  }
-`;
 
 export default UserGrid;

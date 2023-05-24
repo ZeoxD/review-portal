@@ -1,6 +1,15 @@
-.red {
-    background-color: rgb(255, 195, 195);
+.red span {
+    margin-left: 6px;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
 }
-.green {
-    background-color: rgb(199, 255, 199);
+
+.green span {
+    margin-left: 6px;
+    height: 10px;
+    width: 10px;
+    background-color: green;
+    border-radius: 50%;
 }

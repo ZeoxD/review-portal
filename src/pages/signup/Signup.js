@@ -64,7 +64,7 @@ function Signup() {
                 {thumbailError && <div className="error">{thumbailError}</div>}
             </label>
             {!isPending && <button className="btn">Sign up</button>}
-            {isPending && <button className="btn" disabled>Sign up</button>}
+            {isPending && <button className="btn" disabled>loading...</button>}
             {error && <div className="error">{error}</div>}
         </form>
     )

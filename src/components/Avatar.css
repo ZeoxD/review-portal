@@ -2,12 +2,12 @@
     display: inline-block;
     width: 144px;
     height: 144px;
-    border-radius: 10px;
-    border: 2px solid rgb(119, 119, 119);
+    border-radius: 20px;
+    border: 2px solid rgb(216, 216, 216);
     overflow: hidden;
 }
 
 .avatar img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
 }
