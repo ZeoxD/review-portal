@@ -12,6 +12,7 @@ import './Dashboard.css'
 import Avatar from '../../components/Avatar'
 import ProfileDetails from './ProfileDetails'
 import Profile from './Profile'
+import AchievementList from './AchievementList'
 
 const Dashboard = () => {
 
@@ -61,9 +62,7 @@ const Dashboard = () => {
       </Content>
       <ContentArea>
         {error && <p className="error">{error}</p>}
-        {documents && documents.map(doc => (
-          <p key={doc.id}> {doc.title}</p>
-        ))}
+        {documents && <AchievementList achievements={documents}/>}
       </ContentArea>
 
     </Container>
@@ -100,7 +99,7 @@ const ContentArea = styled.div`
   border: 8px solid #ebebf3;
   border-radius: 20px;
   background-color: white;
-  padding: 24px;
+  padding: 24px 24px 4px 24px;
 `
 
 export default Dashboard;

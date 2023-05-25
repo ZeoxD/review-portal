@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useFirestore } from '../../hooks/useFirestore'
+import { useUpdateScore } from '../../hooks/useUpdateScore'
 
 //styles
 import './ProfileDetails.css'
@@ -7,6 +8,7 @@ import './ProfileDetails.css'
 function ProfileDetails() {
 
     const { addDocument } = useFirestore('profile')
+    const { score } = useUpdateScore()
 
     // form field hooks
     const [title, setTitle] = useState('')
@@ -21,6 +23,7 @@ function ProfileDetails() {
             location
         }
         await addDocument(profile)
+        await score()
     }
 
     return (

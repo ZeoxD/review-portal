@@ -1,0 +1,37 @@
+.achievement-main {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 1px 1px 4px rgb(150, 167, 185);
+}
+
+.achievement-main:hover {
+    box-shadow: 1px 1px 6px rgb(129, 147, 167);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.achievement-inline {
+    display: flex;
+    flex-direction: row;
+}
+
+.achievement-inline h4{
+    margin-left: 6px;
+}
+
+.border-style {
+    margin: 6px 0;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 2px rgb(150, 167, 185);
+}
+
+.flex-row-space-bw {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
