@@ -82,6 +82,7 @@ const ContentProfile = styled.div`
   border: 8px solid #ebebf3;
   border-radius: 20px;
   background-color: white;
+  padding: 24px;
 `
 
 const Content = styled.div`
@@ -89,7 +90,7 @@ const Content = styled.div`
   justify-content: space-between;
   max-width: 1128px;
   margin: 10px auto;
-  border-radius: 5px;
+  padding: 24px;
 `
 
 const ContentArea = styled.div`

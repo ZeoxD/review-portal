@@ -8,7 +8,7 @@ export const useUpdateScore = () => {
   const [scoreError, setScoreError] = useState(null)
   const [isScorePending, setIsScorePending] = useState(false)
   const {  user } = useAuthContext()
-  const { idDocuments } = useCollectionId()
+  const { idDocuments } = useCollectionId('users')
 
   const value = idDocuments ? (isNaN(idDocuments.score) ? 500 : idDocuments.score) : 500
   
