@@ -34,22 +34,24 @@ const Dashboard = () => {
     setAdd(true)
   }
 
+  const handleCancel = (val) => {
+    setCancel(val)
+  }
+
   return (
     <Container>
       <ContentProfile>
         <div className="user-card">
           <div className="user-info">
             <Avatar src = {user.photoURL}/>
-            <p>{user.displayName}</p>
-          </div>
-          <div className="user-details">
-            <Profile />
-            <div className="row-value border-style">
+            <div className="row-value score-card">
               <img src="/images/item-icon.svg" alt=""/>
               <h4> {idDocuments ? isNaN(idDocuments.score) ? 500 : idDocuments.score : 500} </h4>
             </div>
-            {!documents && !cancel && <button className="btn btn-margin" onClick={(e) => setCancel(true)}>Edit</button>}
-            {!documents && cancel && <button className="btn btn-margin" onClick={(e) => setCancel(false)}>Cancel</button>}
+          </div>
+          <div className="user-details">
+            <p className="paragraph-style border-style">{user.displayName}</p>
+            <Profile changeCancel={handleCancel}/>
           </div>
         </div>
         <div>

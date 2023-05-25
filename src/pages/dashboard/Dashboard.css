@@ -15,7 +15,7 @@
     margin: 16px;
 }
 
-.user-info p {
+.paragraph-style {
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -32,7 +32,14 @@
     margin: 16px;
 }
 
-.user-details .row-value {
+.score-card {
+    width: 82%;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.row-value {
     display: flex;
     flex-direction: row;
 }
@@ -40,6 +47,7 @@
 .row-value h4 {
     margin-left: 8px;
     color: rgb(230, 208, 13);
+    font-size: 1.3rem;
 }
 
 .btn-margin {
