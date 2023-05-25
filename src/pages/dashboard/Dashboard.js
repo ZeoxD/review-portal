@@ -10,7 +10,7 @@ import './Dashboard.css'
 
 //pages & components
 import Avatar from '../../components/Avatar'
-import Publish from './Publish'
+import ProfileDetails from './ProfileDetails'
 import Profile from './Profile'
 
 const Dashboard = () => {
@@ -52,7 +52,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-            {cancel && <Publish />}
+            {cancel && <ProfileDetails />}
         </div>
       </ContentProfile>
       <Content>

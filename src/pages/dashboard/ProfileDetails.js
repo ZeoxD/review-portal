@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react'
-import { timestamp } from '../../firebase/config'
+import { useState } from 'react'
 import { useFirestore } from '../../hooks/useFirestore'
 
 //styles
-import './Create.css'
+import './ProfileDetails.css'
 
-function Publish() {
+function ProfileDetails() {
 
-    const { addDocument, response } = useFirestore('profile')
+    const { addDocument } = useFirestore('profile')
 
     // form field hooks
     const [title, setTitle] = useState('')
@@ -16,13 +15,11 @@ function Publish() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
         const profile = {
             title,
             education,
             location
         }
-
         await addDocument(profile)
     }
 
@@ -53,4 +50,4 @@ function Publish() {
     )
 }
 
-export default Publish
+export default ProfileDetails
