@@ -44,12 +44,12 @@ const Dashboard = () => {
           </div>
           <div className="user-details">
             <Profile />
-            <div className="row-value">
+            <div className="row-value border-style">
               <img src="/images/item-icon.svg" alt=""/>
               <h4> {idDocuments ? isNaN(idDocuments.score) ? 500 : idDocuments.score : 500} </h4>
             </div>
-            {!cancel && <button className="btn" onClick={(e) => setCancel(true)}>Edit</button>}
-            {cancel && <button className="btn" onClick={(e) => setCancel(false)}>Cancel</button>}
+            {!documents && !cancel && <button className="btn btn-margin" onClick={(e) => setCancel(true)}>Edit</button>}
+            {!documents && cancel && <button className="btn btn-margin" onClick={(e) => setCancel(false)}>Cancel</button>}
           </div>
         </div>
         <div>

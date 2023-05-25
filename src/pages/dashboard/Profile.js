@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useCollection } from '../../hooks/useCollection'
 
 //styles
@@ -8,6 +7,8 @@ function Profile() {
 
     // form field hooks
     const { documents } = useCollection('profile')
+
+    console.log(documents)
     {/*let { id, title, education, location } = ["id", "title", "education", "location"]
     if(documents) {
       id = documents[documents.length-1].id,
@@ -24,18 +25,18 @@ function Profile() {
 
     return (
       <>
-        {documents && <p>Hello</p>
-          /*<div key={id}>
-            <div className="row-value">
-              <p>Title: {title}</p>
+        {documents && 
+          <div key={documents[0].id}>
+            <div className="row-value border-style">
+              <p>{documents[0].title}</p>
             </div>
-            <div className="row-value">
-              <p>Education: {education}</p>
+            <div className="row-value border-style">
+              <p>Education: {documents[0].education}</p>
             </div>
-            <div className="row-value">
-              <p>Location: {location}</p>
+            <div className="row-value border-style">
+              <p>Location: {documents[0].location}</p>
             </div>
-          </div>*/
+          </div>
         }
       </>
     )

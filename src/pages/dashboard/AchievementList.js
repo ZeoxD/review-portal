@@ -12,9 +12,9 @@ function AchievementList({ achievements }) {
                     </div>
                     <div className="flex-row-space-bw border-style">
                         <h4>{a.oname}</h4>
-                        <p className="achievement-inline">Location: 
+                        <div className="achievement-inline">Location: 
                             <h4>{a.location}</h4>
-                        </p>
+                        </div>
                     </div>
                     <div className="flex-row-space-bw border-style">
                         <p><b>Start Date:</b> {a.setDate.toDate().toDateString()}</p>
