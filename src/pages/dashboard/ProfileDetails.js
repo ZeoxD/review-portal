@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useFirestore } from '../../hooks/useFirestore'
 import { useUpdateScore } from '../../hooks/useUpdateScore'
 
-function ProfileDetails() {
+function ProfileDetails({changeCancel}) {
 
     const { addDocument } = useFirestore('profile')
     const { score } = useUpdateScore()
@@ -21,6 +21,7 @@ function ProfileDetails() {
         }
         await addDocument(profile)
         await score()
+        changeCancel(false)
     }
 
     return (

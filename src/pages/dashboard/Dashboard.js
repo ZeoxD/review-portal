@@ -55,7 +55,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div>
-            {cancel && <ProfileDetails />}
+            {cancel && <ProfileDetails changeCancel={handleCancel}/>}
         </div>
       </ContentProfile>
       <Content>
