@@ -1,6 +1,8 @@
 .user-card {
     display: flex;
     flex-direction: row;
+    background-color: white;
+    border-radius: 20px;
 }
 
 .user-info {
@@ -25,8 +27,6 @@
 .user-details {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
     border: 1px solid #ebebf3;
     border-radius: 20px;
@@ -37,4 +37,12 @@
 .user-details .row-value {
     display: flex;
     flex-direction: row;
+    border: 2px solid black;
+    padding: 6px;
+    margin: 6px;
+}
+
+.row-value h4 {
+    margin-left: 8px;
+    color: rgb(230, 208, 13);
 }

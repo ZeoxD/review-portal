@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { timestamp } from '../../firebase/config'
 import { useFirestore } from '../../hooks/useFirestore'
 import { useNavigate } from 'react-router-dom'
+import { useUpdateScore } from '../../hooks/useUpdateScore'
 
 //styles
 import './Create.css'
@@ -9,6 +10,7 @@ import './Create.css'
 function Create() {
     const navigate = useNavigate()
     const { addDocument, response } = useFirestore('achievements')
+    const { score } = useUpdateScore()
 
     // form field hooks
     const [cancel, setCancel] = useState(false)
@@ -43,6 +45,7 @@ function Create() {
         }
 
         await addDocument(achievements)
+        await score()
         if(!response.error) {
             navigate("/")
         }
