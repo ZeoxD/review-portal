@@ -10,11 +10,12 @@ import './Dashboard.css'
 
 //pages & components
 import Avatar from '../../components/Avatar'
-import Publish from '../../pages/dashboard/Publish'
+import Publish from './Publish'
+import Profile from './Profile'
 
 const Dashboard = () => {
 
-  const { idDocuments } = useCollectionId()
+  const { idDocuments } = useCollectionId('users')
   const { documents, error } = useCollection('achievements')
   const navigate = useNavigate()
   const { user } = useAuthContext()
@@ -41,28 +42,17 @@ const Dashboard = () => {
             <p>{user.displayName}</p>
           </div>
           <div className="user-details">
-            <div className="row-value">
-              <p>Title: Software Developer</p>
-            </div>
-            <div className="row-value">
-              <p>Education: ABES Engineering College</p>
-            </div>
-            <div className="row-value">
-              <p>Location: Noida, Uttar Pradesh, India</p>
-            </div>
+            <Profile />
             <div className="row-value">
               <img src="/images/item-icon.svg" alt=""/>
               <h4> {idDocuments ? isNaN(idDocuments.score) ? 500 : idDocuments.score : 500} </h4>
             </div>
-
             {!cancel && <button className="btn" onClick={(e) => setCancel(true)}>Edit</button>}
             {cancel && <button className="btn" onClick={(e) => setCancel(false)}>Cancel</button>}
-
           </div>
-          <div>
-            {!cancel && <Publish />}
+        </div>
+        <div>
             {cancel && <Publish />}
-          </div>
         </div>
       </ContentProfile>
       <Content>
@@ -91,6 +81,7 @@ const ContentProfile = styled.div`
   margin: 10px auto;
   border: 8px solid #ebebf3;
   border-radius: 20px;
+  background-color: white;
 `
 
 const Content = styled.div`
@@ -105,7 +96,10 @@ const ContentArea = styled.div`
   max-width: 1128px;
   margin: 10px auto;
   border-radius: 5px;
-  border: 4px solid black;
+  border: 8px solid #ebebf3;
+  border-radius: 20px;
+  background-color: white;
+  padding: 24px;
 `
 
 export default Dashboard;

@@ -2,13 +2,13 @@ import { useEffect, useState } from "react"
 import { projectFirestore } from "../firebase/config"
 import { useAuthContext } from './useAuthContext'
 
-export const useCollectionId = () => {
+export const useCollectionId = (collection) => {
   const [idDocuments, setIdDocuments] = useState(null)
   const [idError, setIdError] = useState(null)
   const { user } = useAuthContext()
 
   useEffect(() => {
-    let ref = projectFirestore.collection('users').doc(user.uid)
+    let ref = projectFirestore.collection(collection).doc(user.uid)
 
     const unsubscribe = ref.onSnapshot(snapshot => {
         setIdDocuments({...snapshot.data(), id: snapshot.id})
