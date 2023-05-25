@@ -7,7 +7,7 @@ import Avatar from '../../components/Avatar'
 
 const UserGrid = (props) => {
 
-  const { name, imgSrc, onlineStatus, jobStatus } = props
+  const { name, imgSrc, onlineStatus, jobStatus, score } = props
 
   return (
     <Container>
@@ -33,7 +33,7 @@ const UserGrid = (props) => {
         <Item>
           <span>
             <img src="/images/item-icon.svg" alt=""/>
-            <h4>500</h4>
+            <h4>{score}</h4>
           </span>
         </Item>
       </ArtCard>
