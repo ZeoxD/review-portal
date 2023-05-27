@@ -13,7 +13,6 @@ const Login = (props) => {
                 </Hero>
                 <Hero>
                     <h2>Register, Review & Explore all the registered Users in the Preview portal.</h2>
-                    <img src={previewLogo} alt="Preview" />
                 </Hero>
             </Section>
         </Container>
