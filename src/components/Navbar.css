@@ -25,7 +25,7 @@
   .navbar a {
     color: #333;
     text-decoration: none;
-    margin-right: 20px;
+    margin-left: 20px;
   }
   .navbar .li-link {
     border: 2px solid black;
@@ -34,21 +34,50 @@
     padding: 6px 12px;
   }
   .navbar .li-link:hover {
-    border: 2px solid black;
-    font-weight: bolder;
-    border-radius: 5px;
-    padding: 6px 12px;
     box-shadow: 1px 1px 2px black;
   }
   .navbar .btn {
     font-weight: bolder;
-    padding: 8px 16px;
+    margin-left: 20px;
     border-radius: 5px;
-    background-color: white;
+    border-width: 2px;
     cursor: pointer;
   }
   .navbar .btn:hover {
     background-color: red;
     border-color: darkred;
     color: white;
+  }
+
+  @media(max-width: 768px) {
+    .navbar .logo img {
+      width: 105px;
+    }
+    .navbar .li-link {
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 3px 8px;
+    }
+    .navbar .btn {
+      padding: 5px 10px 6px 10px;
+      margin-left: 10px;
+    }
+    .navbar a {
+      margin-left: 10px;
+    }
+  }
+
+  @media(max-width: 426px) {
+    .navbar {
+      padding: 5px;
+    }
+    .navbar .logo img {
+      width: 95px;
+    }
+    .navbar .li-link {
+      font-size: 0.9rem;
+    }
+    .navbar .btn {
+      font-size: 0.9rem;
+    }
   }

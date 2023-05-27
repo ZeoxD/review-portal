@@ -38,7 +38,7 @@ const Section = styled.section`
     @media(max-width: 768px) {
         margin: auto;
         min-height: 0;
-        width: 80%;
+        width: 70%;
     }
     
 `;
@@ -53,7 +53,7 @@ const Hero = styled.div`
         font-weight: 400;
         line-height: 70px;
         @media (max-width: 768px) {
-            margin-top: 80px;
+            margin-top: 60px;
             margin-bottom: 60px;
             text-align: center;
             font-size: 20px;
@@ -72,10 +72,10 @@ const Hero = styled.div`
         line-height: 48px;
         margin-top: 48px;
         @media (max-width: 768px) {
-            margin-top: 80px;
-            margin-bottom: 60px;
+            margin-top: 60px;
+            margin-bottom: 40px;
             text-align: center;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             width: 100%;
             line-height: 2;
@@ -91,7 +91,7 @@ const Hero = styled.div`
         right: 6vw;
         @media (max-width: 768px) {
             top: 230px;
-            width: 80vw;
+            width: 55vw;
             position: initial;
             height: auto;
 
