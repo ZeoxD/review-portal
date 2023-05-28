@@ -7,7 +7,8 @@ import Avatar from '../../components/Avatar'
 
 const UserGrid = (props) => {
 
-  const { name, imgSrc, onlineStatus, jobStatus, score } = props
+  const {name, imgSrc, onlineStatus, score } = props
+  console.log(props)
 
   return (
     <Container>
@@ -16,17 +17,8 @@ const UserGrid = (props) => {
             <Avatar src={imgSrc}/>
         </UserInfo>
         <UserName className={onlineStatus}>
-          <Link to='/visit'>{name}</Link>
+          <Link to={`/visit/${'id'}`}>{name}</Link>
         </UserName>
-        <Widget>
-          <a>
-            <div>
-              <span>Status</span>
-              <span>{jobStatus}</span>
-            </div>
-            <img src="/images/feed-icon.svg" alt="" />
-          </a>
-        </Widget>
         <Item>
           <span>
             <img src="/images/item-icon.svg" alt=""/>

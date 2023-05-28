@@ -18,7 +18,7 @@ function Explore() {
       <Layout>
         {documents && documents.map(user => (
           <UserGrid key={user.id} name={user.displayName} imgSrc={user.photoURL} 
-          onlineStatus={ user.online ? "green" : "red"} jobStatus="Employed" score={user.score}/>
+          onlineStatus={ user.online ? "green" : "red"} score={user.score}/>
         ))}
       </Layout>
     </Container>

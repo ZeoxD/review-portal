@@ -74,7 +74,7 @@ const Dashboard = () => {
 const Container = styled.div`
   padding-top: 48px; 
   max-width: 100vw;
-  margin-bottom: 20px;
+  margin-bottom: 72px;
 `
 
 const ContentProfile = styled.div`
