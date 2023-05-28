@@ -21,7 +21,7 @@ export const useCollectionId = (collection) => {
     // unsubscribe on unmount
     return () => unsubscribe()
 
-  }, [])
+  }, [collection])
 
   return { idDocuments, idError }
 }

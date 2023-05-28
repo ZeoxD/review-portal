@@ -1,12 +1,14 @@
 .achievement-main {
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 10px;
-    box-shadow: 1px 1px 4px rgb(150, 167, 185);
+    padding: 12px;
+    margin: 20px 30px;
 }
 
-.achievement-main:hover {
-    box-shadow: 1px 1px 6px rgb(129, 147, 167);
+.border-shadow {
+    box-shadow: 1px 1px 3px rgb(150, 150, 150);
+}
+
+.border-shadow:hover {
+    box-shadow: 1px 1px 6px rgb(120, 120, 120);
 }
 
 .flex-center {

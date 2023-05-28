@@ -11,7 +11,8 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Explore from "./pages/explore/Explore";
 import Preview from "./pages/preview/Preview";
-import Create from "./pages/dashboard/Create"
+import Create from "./pages/dashboard/Create";
+import Visit from './pages/visit/Visit';
 
 function App() {
   const { user, authIsReady } = useAuthContext()
@@ -29,6 +30,7 @@ function App() {
               <Route path="/explore" element = { user ? <Explore/> : <Navigate to="/preview"/> } />
               <Route path="/achievements" element = { user ? <Create/> : <Navigate to="/preview"/> } />
               <Route path="/preview" element = { !user ? <Preview/> : <Navigate to="/"/> } />
+              <Route path="/visit/:id" element = { <Visit /> } />
             </Routes>
           </div>
         </BrowserRouter>

@@ -6,7 +6,7 @@ function AchievementList({ achievements }) {
         <div>
             {achievements.length === 0 && <p className="margin-bottom-20">No achievements yet!</p>}
             {achievements.map(a => (
-                <div className="achievement-main" key={a.id}>
+                <div className="achievement-main border-shadow" key={a.id}>
                     <div className="flex-center">
                         <h3>{a.title}</h3>
                     </div>

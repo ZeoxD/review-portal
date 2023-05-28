@@ -73,3 +73,10 @@ textarea {
   padding: 8px;
   margin: 10px 0;
 }
+
+.border-shadow {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #dfdfec;
+  box-shadow: 1px 1px 3px #dfdfec;
+}

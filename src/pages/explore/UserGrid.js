@@ -16,8 +16,7 @@ const UserGrid = (props) => {
             <Avatar src={imgSrc}/>
         </UserInfo>
         <UserName className={onlineStatus}>
-          <Link>{name}</Link>
-          <span></span>
+          <Link to='/visit'>{name}</Link>
         </UserName>
         <Widget>
           <a>
@@ -72,6 +71,7 @@ const UserName = styled.div`
   padding: 12px 0;
   word-wrap: break-word;
   word-break: break-word;
+  cursor: pointer;
   &:hover {
     background-color: rgba(0, 0, 0, 0.08);
   }

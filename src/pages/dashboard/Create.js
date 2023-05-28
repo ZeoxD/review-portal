@@ -52,7 +52,7 @@ function Create() {
     }
 
     return (
-        <div className="content-div">
+        <div className="content-div border-shadow">
             <div className="create-form">
                 <div className="form-header">
                     <h2 className="page-title">Add your Achievements</h2>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCollectionUsersData } from '../../hooks/useCollectionUsersData'
 
 //styles
@@ -10,7 +10,9 @@ function Profile({changeCancel, back}) {
     const { udDocuments } = useCollectionUsersData('profile')
     const [cancel, setCancel] = useState(false)
 
-    console.log(back)
+    useEffect(() => {
+      setCancel(back)
+    }, [back])
 
     const handleEdit = (val) => {
       setCancel(val)
@@ -25,10 +27,10 @@ function Profile({changeCancel, back}) {
               <p>{udDocuments[0].title}</p>
             </div>
             <div className="row-value border-style">
-              <p>Education: {udDocuments[0].education}</p>
+              <p><i>Education:</i> {udDocuments[0].education}</p>
             </div>
             <div className="row-value border-style">
-              <p>Location: {udDocuments[0].location}</p>
+              <p><i>Location:</i> {udDocuments[0].location}</p>
             </div>
           </div>
         }
