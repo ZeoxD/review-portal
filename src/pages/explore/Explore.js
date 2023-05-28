@@ -1,4 +1,4 @@
-import { useCollectionUsers } from '../../hooks/useCollectionUsers'
+import { useCollection } from '../../hooks/useCollection'
 
 // styles & images
 import styled from "styled-components";
@@ -8,7 +8,7 @@ import UserGrid from "./UserGrid";
 
 function Explore() {
 
-  const  { userError, userDocuments } = useCollectionUsers('users')
+  const { error, documents } = useCollection('users')
 
   return (
     <Container>
@@ -16,7 +16,7 @@ function Explore() {
         <h1>Explore registered user profiles here</h1>
       </Section>
       <Layout>
-        {userDocuments && userDocuments.map(user => (
+        {documents && documents.map(user => (
           <UserGrid key={user.id} name={user.displayName} imgSrc={user.photoURL} 
           onlineStatus={ user.online ? "green" : "red"} jobStatus="Employed" score={user.score}/>
         ))}

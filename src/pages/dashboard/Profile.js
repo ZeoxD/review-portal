@@ -1,14 +1,16 @@
 import { useState } from 'react'
-import { useCollection } from '../../hooks/useCollection'
+import { useCollectionUsersData } from '../../hooks/useCollectionUsersData'
 
 //styles
 import './Create.css'
 
-function Profile({changeCancel}) {
+function Profile({changeCancel, back}) {
 
     // form field hooks
-    const { documents } = useCollection('profile')
+    const { udDocuments } = useCollectionUsersData('profile')
     const [cancel, setCancel] = useState(false)
+
+    console.log(back)
 
     const handleEdit = (val) => {
       setCancel(val)
@@ -17,22 +19,22 @@ function Profile({changeCancel}) {
 
     return (
       <>
-        {documents && documents.length !== 0 &&
-          <div key={documents[0].id}>
+        {udDocuments && udDocuments.length !== 0 &&
+          <div key={udDocuments[0].id}>
             <div className="row-value border-style">
-              <p>{documents[0].title}</p>
+              <p>{udDocuments[0].title}</p>
             </div>
             <div className="row-value border-style">
-              <p>Education: {documents[0].education}</p>
+              <p>Education: {udDocuments[0].education}</p>
             </div>
             <div className="row-value border-style">
-              <p>Location: {documents[0].location}</p>
+              <p>Location: {udDocuments[0].location}</p>
             </div>
           </div>
         }
-        {documents && !documents.length != 0 && !cancel && <button className="btn btn-margin" 
+        {udDocuments && !udDocuments.length != 0 && !cancel && <button className="btn btn-margin" 
         onClick={() => handleEdit(true)}>Edit</button>}
-        {documents && !documents.length != 0 && cancel && <button className="btn btn-margin" 
+        {udDocuments && !udDocuments.length != 0 && cancel && <button className="btn btn-margin" 
         onClick={() => handleEdit(false)}>Cancel</button>}
       </>
     )

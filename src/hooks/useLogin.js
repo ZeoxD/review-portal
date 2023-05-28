@@ -15,7 +15,7 @@ export const useLogin = () => {
     try {
       // login
       const res = await projectAuth.signInWithEmailAndPassword(email, password)
-
+      
       // update online status
       await projectFirestore.collection('users').doc(res.user.uid).update({ online: true })
 

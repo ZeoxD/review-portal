@@ -20,7 +20,6 @@ function Signup() {
     const handleFileChange = (e) => {
         setThumbnail(null)
         let selected = e.target.files[0]
-        console.log(selected)
 
         if(!selected) {
             setThumbnailError('Please select a file')
@@ -30,8 +29,8 @@ function Signup() {
             setThumbnailError('Selected file must be an image') 
             return
         }
-        if(selected.size > 100000) {
-            setThumbnailError('Image must be smaller than 100kb')
+        if(selected.size > 150000) {
+            setThumbnailError('Image must be smaller than 150kb')
             return
         }
         setThumbnailError(null)

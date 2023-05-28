@@ -13,9 +13,7 @@ const UserGrid = (props) => {
     <Container>
       <ArtCard>
         <UserInfo>
-          <a>
             <Avatar src={imgSrc}/>
-          </a>
         </UserInfo>
         <UserName className={onlineStatus}>
           <Link>{name}</Link>
@@ -42,7 +40,7 @@ const UserGrid = (props) => {
 };
 
 const Container = styled.div`
-  grid-area: leftside;
+  grid-area: ;
   width: 250px;
 `;
 
@@ -51,18 +49,18 @@ const ArtCard = styled.div`
   overflow: hidden;
   margin-bottom: 8px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: box-shadow 83ms;
   position: relative;
   border: none;
-  box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 0 0 rgb(0 0 0 / 20%);
+  box-shadow: 1px 1px 3px black;
 `;
 
 const UserInfo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 36px 0;
 `;
 

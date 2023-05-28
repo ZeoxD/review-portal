@@ -1,9 +1,11 @@
 import { useEffect, useState, useRef } from "react"
 import { projectFirestore } from "../firebase/config"
+import { useAuthContext } from './useAuthContext'
 
-export const useCollectionUsers = (collection, _query, _orderBy) => {
-  const [userDocuments, setUserDocuments] = useState(null)
-  const [userError, setUserError] = useState(null)
+export const useCollectionUsersData = (collection, _query, _orderBy) => {
+  const [udDocuments, setUdDocuments] = useState(null)
+  const [udError, setUdError] = useState(null)
+  const { user } = useAuthContext()
 
   // if we don't use a ref --> infinite loop in useEffect
   // _query is an array and is "different" on every function call
@@ -11,7 +13,7 @@ export const useCollectionUsers = (collection, _query, _orderBy) => {
   const orderBy = useRef(_orderBy).current
 
   useEffect(() => {
-    let ref = projectFirestore.collection(collection)
+    let ref = projectFirestore.collection('usersData').doc(user.uid).collection(collection)
     if (query) {
       ref = ref.where(...query)
     }
@@ -26,11 +28,10 @@ export const useCollectionUsers = (collection, _query, _orderBy) => {
       });
       
       // update state
-      setUserDocuments(results)
-      setUserError(null)
-    }, userError => {
-      console.log(userError)
-      setUserError('could not fetch the data')
+      setUdDocuments(results)
+      setUdError(null)
+    }, error => {
+      setUdError('could not fetch the data')
     })
 
     // unsubscribe on unmount
@@ -38,5 +39,5 @@ export const useCollectionUsers = (collection, _query, _orderBy) => {
 
   }, [collection, query, orderBy])
 
-  return { userDocuments, userError }
+  return { udDocuments, udError }
 }
