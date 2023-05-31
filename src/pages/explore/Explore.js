@@ -9,6 +9,7 @@ import UserGrid from "./UserGrid";
 function Explore() {
 
   const { error, documents } = useCollection('users')
+  console.log()
 
   return (
     <Container>
@@ -17,7 +18,7 @@ function Explore() {
       </Section>
       <Layout>
         {documents && documents.map(user => (
-          <UserGrid key={user.id} name={user.displayName} imgSrc={user.photoURL} 
+          <UserGrid key={user.id} uid={user.id} name={user.displayName} imgSrc={user.photoURL} 
           onlineStatus={user.online ? "green" : "red"} score={user.score}/>
         ))}
       </Layout>

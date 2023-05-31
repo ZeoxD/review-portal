@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom'
+import { useAuthContext } from '../../hooks/useAuthContext';
+
 // styles & images
 import styled from "styled-components";
 import './UserGrid.css'
@@ -7,7 +10,13 @@ import Avatar from '../../components/Avatar'
 
 const UserGrid = (props) => {
 
-  const {name, imgSrc, onlineStatus, score } = props
+  const {uid, name, imgSrc, onlineStatus, score } = props
+  const { user } = useAuthContext()
+
+  let id = `/visit/${uid}`
+  if(uid == user.uid) {
+    id = `/`
+  }
 
   return (
     <Container>
@@ -16,7 +25,7 @@ const UserGrid = (props) => {
             <Avatar className="avatar" src={imgSrc}/>
         </UserInfo>
         <UserName className={onlineStatus}>
-          <Link className="username-link" to={`/visit/${'id'}`}>{name}</Link>
+          <Link className="username-link" key={uid} to={id}>{name}</Link>
           <span></span>
         </UserName>
         <Item>
@@ -86,13 +95,6 @@ const UserName = styled.div`
     flex-direction: row;
     padding: 8px;
   }
-`;
-
-const Link = styled.div`
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.9);
-  font-weight: 600;
 `;
 
 const Item = styled.div`
