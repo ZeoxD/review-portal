@@ -18,7 +18,7 @@ function Explore() {
       <Layout>
         {documents && documents.map(user => (
           <UserGrid key={user.id} name={user.displayName} imgSrc={user.photoURL} 
-          onlineStatus={ user.online ? "green" : "red"} score={user.score}/>
+          onlineStatus={user.online ? "green" : "red"} score={user.score}/>
         ))}
       </Layout>
     </Container>
@@ -28,12 +28,6 @@ function Explore() {
 const Container = styled.div`
   padding-top: 36px;
   max-width: 100vw;
-`;
-
-const Content = styled.div`
-  max-width: 1128px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 const Section = styled.section`
@@ -71,12 +65,11 @@ const Layout = styled.div`
     column-gap: 40px;
     row-gap: 40px;
     /* grid-template-row: auto; */
-    margin: 25px 0;
+    margin: 24px 48px;
     @media (max-width: 768px) {
         display: flex;
-        flex-direction: column;
-        padding: 0 5px;
-  }
+        flex-direction: row;
+    }
 `;
 
 export default Explore;
