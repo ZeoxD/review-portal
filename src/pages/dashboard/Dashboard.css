@@ -72,3 +72,31 @@
 .border-status:hover {
     background: rgb(235, 235, 235, 0.7);
 }
+
+.display-center {
+    display: flex;
+    justify-content: center;
+    padding: 0 32px;
+}
+
+.button-style {
+  background-image: linear-gradient(to bottom, rgb(251, 246, 239), #f8ecd5);
+  border: 1px solid #c6cad1;
+  border-radius: 16px;
+  color: #482307;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 1rem;
+  padding: 12px 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+}
+
+.button-style:hover {
+  background-color: #f3f4f6;
+  box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
+  transform: translateY(0.125rem);
+}

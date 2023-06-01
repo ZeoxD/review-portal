@@ -1,46 +1,88 @@
 import { useCollectionUsersDataId } from '../../hooks/useCollectionUsersDataId'
 import { useParams } from 'react-router-dom'
 import { useCollectionPropId } from '../../hooks/useCollectionPropId'
+import { useState } from 'react'
+import { useFirestorebyId } from '../../hooks/useFirestorebyId'
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 // styles & images
 import styled from "styled-components";
 
 //pages & components
 import Avatar from '../../components/Avatar'
-import ProfileData fr./ProfileDatafileData'
+import ProfileData from './ProfileData'
 import AchievementList from '../dashboard/AchievementList'
+import CommentsList from '../dashboard/CommentsList'
 
 const Visit = () => {
 
     const { id } = useParams()
     const { pidDocuments, pidError } = useCollectionPropId('users', id)
     const { udiDocuments, udiError } = useCollectionUsersDataId('achievements', id)
+    const [comments, setComments] = useState(false)
+    const [reviews, setReviews] = useState('')
+    const { addIdDocument, response } = useFirestorebyId('reviews', id)
+    const { user } = useAuthContext()
+
+    const handleComments = (val) => {
+        setComments(val)
+      }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        const revs = {
+            name: user.displayName,
+            photoURL: user.photoURL,
+            reviews
+        }
+
+        await addIdDocument(revs)
+        setComments(false)
+ 
+    }
 
     return (
         <Container>
-        <ContentProfile>
-            <div className="user-card">
-                <div className="user-info">
-                    <Avatar src = {pidDocuments ? pidDocuments.photoURL: "User"}/>
-                    <div className="row-value score-card">
-                        <img src="/images/item-icon.svg" alt=""/>
-                        <h4> {pidDocuments ? isNaN(pidDocuments.score) ? 500 : pidDocuments.score : 500} </h4>
+            <ContentProfile>
+                <div className="user-card">
+                    <div className="user-info">
+                        <Avatar src = {pidDocuments ? pidDocuments.photoURL: "User"}/>
+                        <div className="row-value score-card">
+                            <img src="/images/item-icon.svg" alt=""/>
+                            <h4> {pidDocuments ? isNaN(pidDocuments.score) ? 500 : pidDocuments.score : 500} </h4>
+                        </div>
+                    </div>
+                    <div className="user-details">
+                        <p className="paragraph-style border-style">{pidDocuments ? pidDocuments.displayName : "User"}</p>
+                        <ProfileData id={id}/>
                     </div>
                 </div>
-                <div className="user-details">
-                    <p className="paragraph-style border-style">{pidDocuments ? pidDocuments.displayName : "User"}</p>
-                    <ProfileData id={id}/>
+            </ContentProfile>
+            <Content>
+                <h1>Achievements</h1>
+            </Content>
+            <ContentArea>
+                {pidError && <p className="error">{pidError}</p>}
+                {udiDocuments && <AchievementList achievements={udiDocuments}/>}
+            </ContentArea>
+            <ContentArea>
+                <div className="display-center">
+                    <button className="button-style" onClick={() => handleComments(true)}>View Reviews</button>
                 </div>
-            </div>
-        </ContentProfile>
-        <Content>
-            <h1>Achievements</h1>
-        </Content>
-        <ContentArea>
-            {pidError && <p className="error">{pidError}</p>}
-            {udiDocuments && <AchievementList achievements={udiDocuments}/>}
-        </ContentArea>
+                <div>
+                    {comments && <CommentsList handleComments={handleComments} id={id}>
+                    <form onSubmit={handleSubmit}>
+                        <label>
+                            <span>Write a Review:</span>
+                            <textarea required type="text" onChange={(e) => setReviews(e.target.value)} value={reviews}></textarea>
+                        </label>
 
+                        <button className="btn">Add Review</button>
+                    </form>
+                    </CommentsList>}
+                </div>
+            </ContentArea>
         </Container>
     );
 };

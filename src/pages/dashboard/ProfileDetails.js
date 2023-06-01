@@ -15,7 +15,7 @@ function ProfileDetails({changeCancel}) {
     const [education, setEducation] = useState('')
     const [location, setLocation] = useState('')
 
-    const handleBack = (e) => {
+    const handleClose = (e) => {
         e.preventDefault()
         changeCancel(false)
     }
@@ -38,7 +38,7 @@ function ProfileDetails({changeCancel}) {
                 <div className="create-form">
                     <div className="form-header">
                         <h2 className="page-title">Update User Info</h2>
-                        <button className="btn" onClick={handleBack}>Back</button>
+                        <button className="btn" onClick={handleClose}>Close</button>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <label>

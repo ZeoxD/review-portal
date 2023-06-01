@@ -13,6 +13,7 @@ import Avatar from '../../components/Avatar'
 import ProfileDetails from './ProfileDetails'
 import Profile from './Profile'
 import AchievementList from './AchievementList'
+import CommentsList from './CommentsList'
 
 const Dashboard = () => {
 
@@ -22,6 +23,7 @@ const Dashboard = () => {
   const { user } = useAuthContext()
   const [add, setAdd] = useState(false)
   const [cancel, setCancel] = useState(false)
+  const [comments, setComments] = useState(false)
 
   useEffect(() => {
     if (add) {
@@ -36,6 +38,10 @@ const Dashboard = () => {
 
   const handleCancel = (val) => {
     setCancel(val)
+  }
+
+  const handleComments = (val) => {
+    setComments(val)
   }
 
   return (
@@ -67,9 +73,13 @@ const Dashboard = () => {
         {udDocuments && <AchievementList achievements={udDocuments}/>}
       </ContentArea>
       <ContentArea>
-        <p>Comments</p>
+        <div className="display-center">
+          <button className="button-style" onClick={() => handleComments(true)}>View Reviews</button>
+        </div>
+        <div>
+          {comments && <CommentsList handleComments={handleComments} />}
+        </div>
       </ContentArea>
-
     </Container>
   );
 };
