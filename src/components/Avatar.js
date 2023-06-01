@@ -1,9 +1,9 @@
 // styles & images
 import './Avatar.css'
 
-function Avatar({src}) {
+function Avatar({src, classAvatar}) {
     return (
-        <div className="avatar">
+        <div className={`avatar ${classAvatar}`}>
             <img src={src} alt="user" />
         </div>
     )

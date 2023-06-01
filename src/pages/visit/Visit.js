@@ -1,7 +1,7 @@
 import { useCollectionUsersDataId } from '../../hooks/useCollectionUsersDataId'
 import { useParams } from 'react-router-dom'
 import { useCollectionPropId } from '../../hooks/useCollectionPropId'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useFirestorebyId } from '../../hooks/useFirestorebyId'
 import { useAuthContext } from '../../hooks/useAuthContext'
 
@@ -30,17 +30,14 @@ const Visit = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
         const revs = {
             name: user.displayName,
             photoURL: user.photoURL,
             reviews
         }
-
-        await addIdDocument(revs)
-        setComments(false)
- 
+        await addIdDocument(revs) 
     }
+
 
     return (
         <Container>
