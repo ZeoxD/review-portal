@@ -7,8 +7,8 @@ import styled from "styled-components";
 
 //pages & components
 import Avatar from '../../components/Avatar'
-import Profile from './Profile'
-import AchievementList from './AchievementList'
+import ProfileData fr./ProfileDatafileData'
+import AchievementList from '../dashboard/AchievementList'
 
 const Visit = () => {
 
@@ -29,7 +29,7 @@ const Visit = () => {
                 </div>
                 <div className="user-details">
                     <p className="paragraph-style border-style">{pidDocuments ? pidDocuments.displayName : "User"}</p>
-                    <Profile id={id}/>
+                    <ProfileData id={id}/>
                 </div>
             </div>
         </ContentProfile>
@@ -77,7 +77,7 @@ const ContentArea = styled.div`
   box-shadow: 1px 1px 3px #dfdfec;
   border-radius: 20px;
   background-color: white;
-  padding: 24px 24px 4px 24px;
+  padding: 24px 24px 24px 24px;
 `
 
 export default Visit;

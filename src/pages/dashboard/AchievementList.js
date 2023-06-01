@@ -4,7 +4,7 @@ import './AchievementList.css'
 function AchievementList({ achievements }) {
     return (
         <div>
-            {achievements.length === 0 && <p className="margin-bottom-20">No achievements yet!</p>}
+            {achievements.length === 0 && <p>No achievements yet!</p>}
             {achievements.map(a => (
                 <div className="achievement-main border-shadow" key={a.id}>
                     <div className="flex-center">

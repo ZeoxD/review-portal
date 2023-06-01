@@ -66,6 +66,9 @@ const Dashboard = () => {
         {udError && <p className="error">{udError}</p>}
         {udDocuments && <AchievementList achievements={udDocuments}/>}
       </ContentArea>
+      <ContentArea>
+        <p>Comments</p>
+      </ContentArea>
 
     </Container>
   );
@@ -103,7 +106,7 @@ const ContentArea = styled.div`
   box-shadow: 1px 1px 3px #dfdfec;
   border-radius: 20px;
   background-color: white;
-  padding: 24px 24px 4px 24px;
+  padding: 24px 24px 24px 24px;
 `
 
 export default Dashboard;
