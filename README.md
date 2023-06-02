@@ -1,6 +1,6 @@
 ## Preview App - A Review portal application.
 
-#### <a href="preview-system.web.app">Preview App - Click here !</a>
+#### <a href="https://preview-system.web.app">Preview App - Click here!</a>
 
 ### Demo
 
