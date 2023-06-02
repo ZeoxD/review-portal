@@ -54,6 +54,10 @@
     margin-top: auto;
 }
 
+.margin-t12 {
+    margin-top: 12px;
+}
+
 .border-style {
     margin: 6px 0;
     border-radius: 10px;

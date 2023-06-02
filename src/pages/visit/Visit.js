@@ -36,6 +36,7 @@ const Visit = () => {
             reviews
         }
         await addIdDocument(revs) 
+        setReviews('')
     }
 
 
@@ -69,13 +70,12 @@ const Visit = () => {
                 </div>
                 <div>
                     {comments && <ReviewList handleComments={handleComments} id={id}>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className="border-style padding-12 margin-12">
                         <label>
                             <span>Write a Review:</span>
                             <textarea required type="text" onChange={(e) => setReviews(e.target.value)} value={reviews}></textarea>
+                            <button className="btn margin-t12">Add Review</button>
                         </label>
-
-                        <button className="btn">Add Review</button>
                     </form>
                     </ReviewList>}
                 </div>
