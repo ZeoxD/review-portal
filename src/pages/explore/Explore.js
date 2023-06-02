@@ -9,7 +9,6 @@ import UserGrid from "./UserGrid";
 function Explore() {
 
   const { error, documents } = useCollection('users')
-  console.log()
 
   return (
     <Container>

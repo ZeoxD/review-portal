@@ -1,7 +1,7 @@
 import { useCollectionUsersDataId } from '../../hooks/useCollectionUsersDataId'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useCollectionPropId } from '../../hooks/useCollectionPropId'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useFirestorebyId } from '../../hooks/useFirestorebyId'
 import { useAuthContext } from '../../hooks/useAuthContext'
 
@@ -23,6 +23,13 @@ const Visit = () => {
     const [reviews, setReviews] = useState('')
     const { addIdDocument, response } = useFirestorebyId('reviews', id)
     const { user } = useAuthContext()
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if(user.uid == id) {
+            navigate("/")
+        }
+    }, [])
 
     const handleComments = (val) => {
         setComments(val)
