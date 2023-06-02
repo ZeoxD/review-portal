@@ -1,7 +1,7 @@
 import { useCollectionUsersDataId } from '../../hooks/useCollectionUsersDataId'
 import { useParams } from 'react-router-dom'
 import { useCollectionPropId } from '../../hooks/useCollectionPropId'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useFirestorebyId } from '../../hooks/useFirestorebyId'
 import { useAuthContext } from '../../hooks/useAuthContext'
 
@@ -12,7 +12,7 @@ import styled from "styled-components";
 import Avatar from '../../components/Avatar'
 import ProfileData from './ProfileData'
 import AchievementList from '../dashboard/AchievementList'
-import CommentsList from '../dashboard/CommentsList'
+import ReviewList from './ReviewList'
 
 const Visit = () => {
 
@@ -68,7 +68,7 @@ const Visit = () => {
                     <button className="button-style" onClick={() => handleComments(true)}>View Reviews</button>
                 </div>
                 <div>
-                    {comments && <CommentsList handleComments={handleComments} id={id}>
+                    {comments && <ReviewList handleComments={handleComments} id={id}>
                     <form onSubmit={handleSubmit}>
                         <label>
                             <span>Write a Review:</span>
@@ -77,7 +77,7 @@ const Visit = () => {
 
                         <button className="btn">Add Review</button>
                     </form>
-                    </CommentsList>}
+                    </ReviewList>}
                 </div>
             </ContentArea>
         </Container>

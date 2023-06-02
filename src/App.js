@@ -30,7 +30,7 @@ function App() {
               <Route path="/explore" element = { user ? <Explore/> : <Navigate to="/preview"/> } />
               <Route path="/achievements" element = { user ? <Create/> : <Navigate to="/preview"/> } />
               <Route path="/preview" element = { !user ? <Preview/> : <Navigate to="/"/> } />
-              <Route path="/visit/:id" element = { <Visit /> } />
+              <Route path="/visit/:id" element = { user ? <Visit /> : <Navigate to="/preview"/> } />
             </Routes>
           </div>
         </BrowserRouter>

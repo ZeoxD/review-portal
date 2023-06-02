@@ -1,14 +1,11 @@
-import { useCollectionUsersData } from '../../hooks/useCollectionUsersData';
-
-//styles & images
-import './CommentsList.css'
+import { useCollectionUsersDataId } from '../../hooks/useCollectionUsersDataId';
 
 //pages & components
-import ViewReviews from './ViewReviews'
+import ViewReviews from '../dashboard/ViewReviews'
 
-function CommentsList({handleComments}) {
+function CommentsList({handleComments, children, id}) {
 
-    const { udDocuments, udError } = useCollectionUsersData('reviews')
+    const { udiDocuments, udiError } = useCollectionUsersDataId('reviews', id)
     
     return (
         <div className="content-backdrop">
@@ -17,7 +14,8 @@ function CommentsList({handleComments}) {
                     <h3>Reviews: </h3>
                     <button className="btn" onClick={() => handleComments(false)}>Close</button> 
                 </div>
-                <ViewReviews doc={udDocuments} err={udError}/>
+                <ViewReviews doc={udiDocuments} err={udiError}/>
+                {children}
             </div>
         </div>
     )
