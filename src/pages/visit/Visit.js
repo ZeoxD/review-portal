@@ -60,7 +60,7 @@ const Visit = () => {
                     </div>
                     <div className="user-details">
                         <p className="paragraph-style user-name-style">{pidDocuments ? pidDocuments.displayName : "User"}</p>
-                        <ProfileData id={user.uid}/>
+                        <ProfileData id={id}/>
                     </div>
                 </div>
             </ContentProfile>
