@@ -29,7 +29,7 @@ const Dashboard = () => {
     if (add) {
       navigate("/achievements")
     }
-  }, [add])
+  }, [add, navigate])
 
   const handleAdd = (e) => {
     e.preventDefault() 
@@ -56,7 +56,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="user-details">
-            <p className="paragraph-style border-style">{user.displayName}</p>
+            <p className="paragraph-style user-name-style">{user.displayName}</p>
             <Profile changeCancel={handleCancel} back={cancel}/>
           </div>
         </div>

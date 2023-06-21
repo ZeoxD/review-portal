@@ -1,22 +1,30 @@
 import { useCollectionUsersDataId } from '../../hooks/useCollectionUsersDataId'
 
-function Profile({id}) {
+//styles & images
+import WorkIcon from '@mui/icons-material/Work';
+import SchoolIcon from '@mui/icons-material/School';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+
+function ProfileData({id}) {
 
     // form field hooks
     const { udiDocuments } = useCollectionUsersDataId('profile', id)
 
     return (
       <>
-        {udiDocuments &&
+        {udiDocuments && udiDocuments.length !== 0 &&
           <div key={udiDocuments[0].id}>
             <div className="row-value border-style">
-              <p>{udiDocuments[0].title}</p>
+              <WorkIcon className="round-square" />
+              <p className="display-center-2 padding-lr-10">{udiDocuments[0].title}</p>
             </div>
             <div className="row-value border-style">
-              <p><i>Education:</i> {udiDocuments[0].education}</p>
+              <SchoolIcon className="round-square" />
+              <p className="display-center-2 padding-lr-10">{udiDocuments[0].education}</p>
             </div>
             <div className="row-value border-style">
-              <p><i>Location:</i> {udiDocuments[0].location}</p>
+              <LocationOnIcon className="round-square" />
+              <p className="display-center-2 padding-lr-10">{udiDocuments[0].location}</p>
             </div>
           </div>
         }
@@ -24,4 +32,4 @@ function Profile({id}) {
     )
 }
 
-export default Profile
+export default ProfileData

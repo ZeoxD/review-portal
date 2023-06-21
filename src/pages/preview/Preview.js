@@ -1,7 +1,6 @@
 //styles & images
 import styled from "styled-components";
 import previewLogo from '../../assets/preview-login-small.jpg'
-import googleLogo from '../../assets/google-logo.png'
 
 const Login = (props) => {
     return (

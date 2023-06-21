@@ -18,18 +18,18 @@ const Visit = () => {
 
     const { id } = useParams()
     const { pidDocuments, pidError } = useCollectionPropId('users', id)
-    const { udiDocuments, udiError } = useCollectionUsersDataId('achievements', id)
+    const { udiDocuments } = useCollectionUsersDataId('achievements', id)
     const [comments, setComments] = useState(false)
     const [reviews, setReviews] = useState('')
-    const { addIdDocument, response } = useFirestorebyId('reviews', id)
+    const { addIdDocument } = useFirestorebyId('reviews', id)
     const { user } = useAuthContext()
     const navigate = useNavigate()
 
     useEffect(() => {
-        if(user.uid == id) {
+        if(user.uid === id) {
             navigate("/")
         }
-    }, [])
+    }, [user.uid, id, navigate])
 
     const handleComments = (val) => {
         setComments(val)
@@ -59,8 +59,8 @@ const Visit = () => {
                         </div>
                     </div>
                     <div className="user-details">
-                        <p className="paragraph-style border-style">{pidDocuments ? pidDocuments.displayName : "User"}</p>
-                        <ProfileData id={id}/>
+                        <p className="paragraph-style user-name-style">{pidDocuments ? pidDocuments.displayName : "User"}</p>
+                        <ProfileData id={user.uid}/>
                     </div>
                 </div>
             </ContentProfile>

@@ -20,7 +20,6 @@
     justify-content: center;
     font-weight: bold;
     font-size: 1.1rem;
-    margin-top: 12px;
 }
 
 .user-details {
@@ -65,6 +64,12 @@
     box-shadow: 0 0 2px rgb(150, 167, 185);
 }
 
+.user-name-style {
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 2px rgb(150, 167, 185);
+}
+
 .border-status {
     margin: 15px 0 10px 0;
     padding: 2px 25px 0px 25px;
@@ -81,6 +86,16 @@
     display: flex;
     justify-content: center;
     padding: 0 32px;
+}
+
+.display-center-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.padding-lr-10 {
+    padding: 0 10px;
 }
 
 .button-style {
@@ -103,4 +118,11 @@
   background-color: #f3f4f6;
   box-shadow: -1px 2px 5px rgba(81,41,10,0.15),0px 1px 1px rgba(81,41,10,0.15);
   transform: translateY(0.125rem);
+}
+
+.round-square {
+    border: 1px solid rgb(207, 207, 207);
+    padding: 2px;
+    border-radius: 5px;
+    background-color: rgb(228, 228, 228);
 }

@@ -25,7 +25,7 @@ function Create() {
         if (cancel) {
           navigate("/")
         }
-      }, [cancel])
+      }, [cancel, navigate])
 
     const handleBack = (e) => {
         e.preventDefault()

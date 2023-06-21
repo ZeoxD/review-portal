@@ -7,7 +7,7 @@
 .content-modal {
     max-width: 720px;
     margin-top: 15vh;
-    height: 65vh;
+    max-height: 65vh;
 }
 
 .container-modal {

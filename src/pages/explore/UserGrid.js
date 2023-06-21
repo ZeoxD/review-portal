@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useAuthContext } from '../../hooks/useAuthContext';
-import { useEffect } from 'react'
 
 // styles & images
 import styled from "styled-components";
@@ -15,7 +14,7 @@ const UserGrid = (props) => {
   const { user } = useAuthContext()
 
   let id = `/visit/${uid}`
-  if(uid == user.uid) {
+  if(uid === user.uid) {
     id = `/`
   }
 

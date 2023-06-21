@@ -1,13 +1,15 @@
 import { useState } from 'react'
-import { useFirestore } from '../../hooks/useFirestore'
+import { useFirestorebyId } from '../../hooks/useFirestorebyId'
 import { useUpdateScore } from '../../hooks/useUpdateScore'
+import { useAuthContext } from '../../hooks/useAuthContext'
 
 // styles & images
 import './ProfileDetails.css'
 
 function ProfileDetails({changeCancel}) {
 
-    const { addDocument } = useFirestore('profile')
+    const { user } = useAuthContext()
+    const { addIdDocument } = useFirestorebyId('profile', user.uid)
     const { score } = useUpdateScore()
 
     // form field hooks
@@ -27,7 +29,7 @@ function ProfileDetails({changeCancel}) {
             education,
             location
         }
-        await addDocument(profile)
+        await addIdDocument(profile)
         await score()
         changeCancel(false)
     }

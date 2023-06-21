@@ -35,7 +35,7 @@ export const useCollectionUsersDataId = (collection, id, _query, _orderBy) => {
     // unsubscribe on unmount
     return () => unsubscribe()
 
-  }, [collection, query, orderBy])
+  }, [collection, id, query, orderBy])
 
   return { udiDocuments, udiError }
 }

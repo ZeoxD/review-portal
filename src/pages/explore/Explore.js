@@ -8,7 +8,7 @@ import UserGrid from "./UserGrid";
 
 function Explore() {
 
-  const { error, documents } = useCollection('users')
+  const { documents } = useCollection('users')
 
   return (
     <Container>
