@@ -6,24 +6,7 @@
 
 .content-modal {
     max-width: 720px;
-    margin-top: 15vh;
     max-height: 65vh;
-}
-
-.container-modal {
-    overflow-y: scroll;
-    height: 65vh;
-    padding-right: 12px;
-}
-
-.container-modal::-webkit-scrollbar {
-    width: 8px;
-
-}
-
-.container-modal::-webkit-scrollbar-thumb {
-    background-color: rgb(209, 209, 209);
-    border-radius: 12px;
 }
 
 .review-section {

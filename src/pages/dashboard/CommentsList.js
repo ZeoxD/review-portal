@@ -13,13 +13,11 @@ function CommentsList({handleComments}) {
     return (
         <div className="content-backdrop">
             <div className="content-modal">
-                <div className="container-modal">
-                    <div className="display-space-between">
-                        <h3>Reviews: </h3>
-                        <button className="btn" onClick={() => handleComments(false)}>Close</button> 
-                    </div>
-                    <ViewReviews doc={udDocuments} err={udError}/>
+                <div className="display-space-between">
+                    <h3>Reviews: </h3>
+                    <button className="btn" onClick={() => handleComments(false)}>Close</button> 
                 </div>
+                <ViewReviews doc={udDocuments} err={udError}/>
             </div>
         </div>
     )
