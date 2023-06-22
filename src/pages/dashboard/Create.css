@@ -7,3 +7,21 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media (max-width: 840px) {
+    .content-div {
+        margin: 48px 6vw;
+        padding: 24px 48px;
+    }
+}
+
+@media (max-width: 526px) {
+    .content-div {
+        margin: 48px 2vw;
+        padding: 24px 24px;
+    }
+
+    .page-title {
+        font-size: 0.9rem;
+    }
+}

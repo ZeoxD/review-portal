@@ -22,7 +22,7 @@ const UserGrid = (props) => {
     <Container>
       <ArtCard>
         <UserInfo>
-            <Avatar className="avatar" src={imgSrc}/>
+            <Avatar src={imgSrc} classAvatar="avatar-responsive" />
         </UserInfo>
         <UserName className={onlineStatus}>
           <Link className="username-link" key={uid} to={id}>{name}</Link>

@@ -56,7 +56,7 @@ function Create() {
             <div className="create-form">
                 <div className="form-header">
                     <h2 className="page-title">Add your Achievements</h2>
-                    <button className="btn" onClick={handleBack}>Back</button>
+                    <button className="btn btn-responsive" onClick={handleBack}>Back</button>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <label>

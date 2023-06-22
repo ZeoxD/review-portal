@@ -12,7 +12,7 @@
 
 .content-modal {
     padding: 30px;
-    width: 40%;
+    width: 45%;
     background: white;
     border-radius: 20px;
     overflow-y: scroll;
@@ -36,4 +36,22 @@
 .page-title{
     display: flex;
     align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .content-modal {
+        width: 50%;
+    }
+}
+
+@media (max-width: 840px) {
+    .content-modal {
+        width: 60%;
+    }
+}
+
+@media (max-width: 526px) {
+    .content-modal {
+        width: 70%;
+    }
 }

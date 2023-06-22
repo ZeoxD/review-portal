@@ -41,3 +41,34 @@
 .margin-bottom-20 {
     margin-bottom: 20px;
 }
+
+.margin-r-8 {
+    margin-right: 8px;
+}
+
+.margin-l-8 {
+    margin-left: 8px;
+}
+
+@media (max-width: 526px) {
+    .achievement-main {
+        padding: 12px;
+        margin: 12px 6px;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    h4 {
+        font-size: 0.8rem;
+    }
+
+    .achievement-inline {
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 0.75rem;
+    }
+}

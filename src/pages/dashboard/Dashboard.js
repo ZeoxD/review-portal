@@ -49,7 +49,7 @@ const Dashboard = () => {
       <ContentProfile>
         <div className="user-card">
           <div className="user-info">
-            <Avatar src = {user.photoURL}/>
+            <Avatar src={user.photoURL}/>
             <div className="row-value score-card">
               <img src="/images/item-icon.svg" alt=""/>
               <h4> {idDocuments ? isNaN(idDocuments.score) ? 500 : idDocuments.score : 500} </h4>
@@ -66,7 +66,7 @@ const Dashboard = () => {
       </ContentProfile>
       <Content>
         <h1>Achievements</h1>
-        <button className="btn" onClick={handleAdd}>Add achievements</button>
+        <button className="btn btn-responsive" onClick={handleAdd}>Add achievements</button>
       </Content>
       <ContentArea>
         {udError && <p className="error">{udError}</p>}

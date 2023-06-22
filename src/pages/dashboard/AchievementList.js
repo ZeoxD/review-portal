@@ -17,8 +17,8 @@ function AchievementList({ achievements }) {
                         </div>
                     </div>
                     <div className="flex-row-space-bw border-style">
-                        <p><b>Start Date:</b> {a.setDate.toDate().toDateString()}</p>
-                        <p><b>End Date:</b> {a.endDate.toDate().toDateString()}</p>
+                        <p className="margin-r-8"><b>Start Date:</b> {a.setDate.toDate().toDateString()}</p>
+                        <p className="margin-l-8"><b>End Date:</b> {a.endDate.toDate().toDateString()}</p>
                     </div>
                     <div className="border-style">
                         <h4>Description:</h4>
