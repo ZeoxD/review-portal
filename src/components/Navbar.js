@@ -17,29 +17,32 @@ function Navbar() {
         <li className="logo">
           <img src={Preview} alt="Preview logo"/>
         </li>
+        <div className="list-right">
+          {user && ( 
+            <>
+              <li><Link to="/" className="li-link">Home</Link></li>
+              <li><Link to="/explore" className="li-link">Explore</Link></li>    
+            </>
+          )}  
 
-        {user && ( 
-          <>
-            <li><Link to="/" className="li-link">Home</Link></li>
-            <li><Link to="/explore" className="li-link">Explore</Link></li>    
-          </>
-        )}  
+          {!user && ( 
+            <>
+              <li><Link to="/login" className="li-link">Login</Link></li>
+              <li><Link to="/signup" className="li-link">Signup</Link></li>
+            </>
+          )}
 
-        {!user && ( 
-          <>
-            <li><Link to="/login" className="li-link">Login</Link></li>
-            <li><Link to="/signup" className="li-link">Signup</Link></li>
-          </>
-        )}
-
-        {user && ( 
-          <>
-            <li>
-                {!isPending && <button className="btn" onClick={logout}>Logout</button>}
-                {isPending && <button className="btn" disabled>Logout</button>}
-            </li>
-          </>
-        )}
+          {user && ( 
+            <>
+              <li>
+                <Link>
+                  {!isPending && <button className="btn" onClick={logout}>Logout</button>}
+                  {isPending && <button className="btn" disabled>Logout</button>}
+                </Link>
+              </li>
+            </>
+          )}
+        </div>
       </ul>
     </div>
   );

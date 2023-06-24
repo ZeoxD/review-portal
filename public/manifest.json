@@ -1,10 +1,26 @@
 {
   "short_name": "Preview",
   "name": "Preview",
+  "description": "A Personal Review Portal application for Employee's and Users",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "favicon64.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon32.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon24.ico",
+      "sizes": "24x24",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon16.ico",
+      "sizes": "16x16",
       "type": "image/x-icon"
     },
     {

@@ -2,7 +2,6 @@
     width: 100%;
     padding: 10px 10px;
     box-sizing: border-box;
-    margin-bottom: 20px;
   }
   .navbar ul {
     display: flex;
@@ -25,20 +24,22 @@
   .navbar a {
     color: #333;
     text-decoration: none;
-    margin-left: 20px;
   }
   .navbar .li-link {
+    justify-content: center;
+    display: flex;
+    align-items: center;
     border: 2px solid black;
     font-weight: bolder;
     border-radius: 5px;
-    padding: 6px 12px;
+    margin-right: 12px;
+    padding: 5px 10px;
   }
   .navbar .li-link:hover {
     box-shadow: 1px 1px 2px black;
   }
   .navbar .btn {
     font-weight: bolder;
-    margin-left: 20px;
     border-radius: 5px;
     border-width: 2px;
     cursor: pointer;
@@ -49,25 +50,21 @@
     color: white;
   }
 
-  @media(max-width: 768px) {
+  .list-right {
+    display: flex;
+    align-items: center;
+  }
+
+  @media(max-width: 840px) {
     .navbar .logo img {
       width: 105px;
     }
     .navbar .li-link {
-      font-size: 1rem;
       font-weight: bold;
-      padding: 3px 8px;
-    }
-    .navbar .btn {
-      padding: 5px 10px 6px 10px;
-      margin-left: 10px;
-    }
-    .navbar a {
-      margin-left: 10px;
     }
   }
 
-  @media(max-width: 426px) {
+  @media(max-width: 526px) {
     .navbar {
       padding: 5px;
     }
@@ -75,9 +72,11 @@
       width: 95px;
     }
     .navbar .li-link {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      padding: 2px 8px;
     }
     .navbar .btn {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
+      padding: 5px 8px;
     }
   }

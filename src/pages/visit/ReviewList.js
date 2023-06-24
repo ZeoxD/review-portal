@@ -13,7 +13,7 @@ function CommentsList({handleComments, children, id}) {
                 <div className="container-modal">
                     <div className="display-space-between">
                         <h3>Reviews: </h3>
-                        <button className="btn" onClick={() => handleComments(false)}>Close</button> 
+                        <button className="btn btn-responsive" onClick={() => handleComments(false)}>Close</button> 
                     </div>
                     <ViewReviews doc={udiDocuments} err={udiError}/>
                     {children}

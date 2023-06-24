@@ -4,46 +4,18 @@ import previewLogo from '../../assets/preview-login-small.jpg'
 
 const Login = (props) => {
     return (
-        <Container>
-            <Section>
-                <Hero>
-                    <h1>Welcome to our Personal Review Portal application.</h1>
-                    <img src={previewLogo} alt="Preview" />
-                </Hero>
-                <Hero>
-                    <h2>Register, Review & Explore all the registered Users in the Preview portal.</h2>
-                </Hero>
-            </Section>
-        </Container>
+        <Section>
+            <h1>Welcome to our Personal Review Portal application.</h1>
+            <img src={previewLogo} alt="Preview" />
+            <h2>Register, Review & Explore all the registered Users in the Preview portal.</h2>
+        </Section>
     )
 }
 
-const Container = styled.div`
-    padding: 0px;
-`;
-
-const Section = styled.section`
-    display: flex;    
-    align-content: start;
-    min-height: 700px;
-    padding-bottom: 140px;
-    paddint-top: 40px;
-    padding: 0 60px;
-    position: relative;
-    flex-wrap: wrap;
-    width: 90%;
-    max-width: 100vw;
-    margin: auto;
-    @media(max-width: 768px) {
-        margin: auto;
-        min-height: 0;
-        width: 70%;
-    }
-    
-`;
-
-const Hero = styled.div`
+const Section = styled.div`
     width: 100%;
+    height: 93vh;
+
     h1 {
         padding-bottom: 0;
         width: 55%;
@@ -52,8 +24,8 @@ const Hero = styled.div`
         font-weight: 400;
         line-height: 70px;
         @media (max-width: 768px) {
-            margin-top: 60px;
-            margin-bottom: 60px;
+            margin: 0;
+            margin-top: 10vh;
             text-align: center;
             font-size: 20px;
             font-weight: bold;
@@ -71,8 +43,8 @@ const Hero = styled.div`
         line-height: 48px;
         margin-top: 48px;
         @media (max-width: 768px) {
-            margin-top: 60px;
-            margin-bottom: 40px;
+            margin: 0;
+            margin-bottom: 10vh;
             text-align: center;
             font-size: 18px;
             font-weight: bold;
@@ -89,12 +61,18 @@ const Hero = styled.div`
         bottom: 6vh;
         right: 6vw;
         @media (max-width: 768px) {
-            top: 230px;
-            width: 55vw;
-            position: initial;
+            position: static;
+            bottom: 0;
+            right: 0;
+            margin: auto auto;
+            width: 80vw;
             height: auto;
-
         }
+    }
+
+    @media(max-width: 768px) {
+        display: flex;
+        flex-direction: column;
     }
 `;
 
