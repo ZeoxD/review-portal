@@ -13,8 +13,7 @@ const Login = (props) => {
 }
 
 const Section = styled.div`
-    width: 100%;
-    height: 93vh;
+    padding: 5vh 5vw;
 
     h1 {
         padding-bottom: 0;
@@ -73,6 +72,8 @@ const Section = styled.div`
     @media(max-width: 768px) {
         display: flex;
         flex-direction: column;
+        height: 92vh;
+        padding: 0;
     }
 `;
 
