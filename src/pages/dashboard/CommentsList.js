@@ -1,3 +1,4 @@
+import React from 'react'
 import { useCollectionUsersData } from '../../hooks/useCollectionUsersData';
 
 //styles & images

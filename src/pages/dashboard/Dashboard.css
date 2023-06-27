@@ -122,8 +122,16 @@
     border: 1px solid rgb(207, 207, 207);
     padding: 2px;
     border-radius: 5px;
+    height: 20px;
+    width: auto;
     background-color: rgb(228, 228, 228);
 }
+
+.icon-sm {
+    height: 18px;
+    padding: 3px;
+}
+
 
 @media (max-width: 768px) {
     .user-card {
@@ -138,6 +146,14 @@
 
     .btn-responsive {
         font-size: 0.8rem;
+    }
+
+    .p-0 {
+        padding: 0;
+    }
+
+    .mx-6 {
+        margin: 0 6px;
     }
 }
 

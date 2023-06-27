@@ -1,9 +1,11 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles & images
 import styled from "styled-components";
-import './UserGrid.css'
+import './UserGrid.css';
+import ItemIcon from "../../assets/item-icon.svg";
 
 // pages & components
 import Avatar from '../../components/Avatar'
@@ -30,7 +32,7 @@ const UserGrid = (props) => {
         </UserName>
         <Item>
           <span>
-            <img src="/images/item-icon.svg" alt=""/>
+            <img src={ItemIcon} alt="item"/>
             <h4>{score}</h4>
           </span>
         </Item>
@@ -42,10 +44,10 @@ const UserGrid = (props) => {
 const Container = styled.div` 
   width: 210px;
   @media (max-width: 840px) {
-    width: 180px;
+    width: 132px;
   }
   @media (max-width: 526px) {
-    width: 480px;
+    width: 300px;
   }
 `;
 
@@ -71,10 +73,10 @@ const UserInfo = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 32px 0;
   @media (max-width: 840px) {
-    padding: 32px 0;
+    padding: 24px 0;
   }
   @media (max-width: 526px) {
-    padding: 20px;
+    padding: 12px;
   }
 `;
 
@@ -93,7 +95,7 @@ const UserName = styled.div`
   @media (max-width: 526px) {
     display: flex;
     flex-direction: row;
-    padding: 8px;
+    padding: 0 8px;
   }
 `;
 
@@ -110,11 +112,10 @@ const Item = styled.div`
     color: rgb(230, 208, 13);
     img {
       height: 20px;
+      margin-right: 4px;
     }
   }
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.08);
-  }
+
   @media (max-width: 526px) {
     display: flex;
     flex-direction: row;

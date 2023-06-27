@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState } from 'react'
 import { useFirestorebyId } from '../../hooks/useFirestorebyId'
 import { useUpdateScore } from '../../hooks/useUpdateScore'

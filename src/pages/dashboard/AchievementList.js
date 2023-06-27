@@ -1,3 +1,5 @@
+import React from 'react'
+
 // styles & images
 import './AchievementList.css'
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useCollection } from '../../hooks/useCollection'
 
 // styles & images
@@ -49,9 +50,15 @@ const Section = styled.section`
     color: #434649;
     font-weight: 600;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 840px) {
     flex-direction: column;
     padding: 0 5px;
+  }
+
+  @media (max-width: 526px) {
+    h1 {
+      font-size: 1.12rem;
+    }
   }
 `;
 
@@ -64,11 +71,16 @@ const Layout = styled.div`
     grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
     column-gap: 40px;
     row-gap: 40px;
-    /* grid-template-row: auto; */
     margin: 24px 48px;
-    @media (max-width: 768px) {
-        display: flex;
-        flex-direction: row;
+    @media (max-width: 840px) {
+      display: flex;
+      flex-direction: row;
+      row-gap: 16px;
+      column-gap: 16px;
+      margin: 24px;
+    }
+    @media (max-width: 526px) {
+      row-gap: 12px;
     }
 `;
 

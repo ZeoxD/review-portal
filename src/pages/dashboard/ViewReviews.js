@@ -1,3 +1,5 @@
+import React from 'react'
+
 //pages & components
 import Avatar from '../../components/Avatar'
 

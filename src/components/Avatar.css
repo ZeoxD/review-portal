@@ -20,14 +20,14 @@
 
 @media(max-width: 840px) {
     .avatar-responsive {
-        width: 96px;
-        height: 96px;
+        width: 72px;
+        height: 72px;
     }
 }
 
 @media(max-width: 526px) {
     .avatar-responsive {
-        width: 60px;
-        height: 60px;
+        width: 48px;
+        height: 48px;
     }
 }

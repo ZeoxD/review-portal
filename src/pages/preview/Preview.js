@@ -1,3 +1,5 @@
+import React from 'react'
+
 //styles & images
 import styled from "styled-components";
 import previewLogo from '../../assets/preview-login-small.jpg'
@@ -22,7 +24,26 @@ const Section = styled.div`
         color: #1e4620;
         font-weight: 400;
         line-height: 70px;
-        @media (max-width: 768px) {
+
+        @media (max-width: 1024px) {
+            margin: 0;
+            text-align: center;
+            font-size: 32px;
+            width: 55%;
+            line-height: 60px;
+        }
+
+        @media (max-width: 840px) {
+            margin: 0;
+            margin-top: 6vh;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            width: 100%;
+            line-height: 2;
+        }
+
+        @media (max-width: 526px) {
             margin: 0;
             margin-top: 10vh;
             text-align: center;
@@ -40,8 +61,24 @@ const Section = styled.div`
         color: #1e4620;
         font-weight: 400;
         line-height: 48px;
-        margin-top: 48px;
-        @media (max-width: 768px) {
+        margin-top: 36px;
+
+        @media (max-width: 1024px) {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        @media (max-width: 840px) {
+            margin: 0;
+            margin-bottom: 6vh;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+            line-height: 2;
+        }
+
+        @media (max-width: 526px) {
             margin: 0;
             margin-bottom: 10vh;
             text-align: center;
@@ -54,12 +91,17 @@ const Section = styled.div`
 
     img {
         z-index: -1;
-        width: 50vw;
+        width: 850px;
         height: auto;
         position: absolute;
         bottom: 6vh;
         right: 6vw;
-        @media (max-width: 768px) {
+
+        @media (max-width: 1024px) {
+            width: 600px;
+        }
+
+        @media (max-width: 840px) {
             position: static;
             bottom: 0;
             right: 0;
@@ -69,7 +111,7 @@ const Section = styled.div`
         }
     }
 
-    @media(max-width: 768px) {
+    @media(max-width: 840px) {
         display: flex;
         flex-direction: column;
         height: 92vh;

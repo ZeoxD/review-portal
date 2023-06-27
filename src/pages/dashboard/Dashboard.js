@@ -1,3 +1,4 @@
+import React from 'react'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -73,7 +74,7 @@ const Dashboard = () => {
         {udDocuments && <AchievementList achievements={udDocuments}/>}
       </ContentArea>
       <ContentArea>
-        <div className="display-center">
+        <div className="display-center p-0 mx-6">
           <button className="button-style" onClick={() => handleComments(true)}>View Reviews</button>
         </div>
         <div>
